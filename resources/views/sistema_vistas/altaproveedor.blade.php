@@ -69,7 +69,7 @@ Formularios
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-lg-4 col-form-label" for="idempr">EMPRESA<span class="text-danger">*</span></label>
+                                <label class="col-lg-4 col-form-label" for="idempr">SELECCIONA UNAEMPRESA<span class="text-danger">*</span></label>
                                 <div class="col-lg-6">
                                     <select class="form-control" id="idempr" name='idempr'>
                                         @foreach($empresas as $em)
@@ -78,7 +78,7 @@ Formularios
                                     </select>
                                 </div>
                             </div>
-
+<!-- modificado select -->
                             <div class="form-group row">
                                 <div class="col-lg-8 ml-auto">
                                     <button type="submit" class="btn btn-primary">GUARDAR</button>
