@@ -21,6 +21,18 @@ Route::get('/saludo', function () {
  
 //VISTAS
 
+Route::get('/altaempleado','empleado@altaempleado');
+Route::POST('/guardaempleado','empleado@guardaempleado')->name('guardaempleado');
+Route::get('/reporteempleado','empleado@reporteempleado');
+
+Route::get('/altaproveedor','proveedor@altaproveedor');
+Route::POST('/guardaproveedor','proveedor@guardaproveedor')->name('guardaproveedor');
+Route::get('/reporteproveedores','proveedor@reporteproveedor');
+
+Route::get('/altamateria','matprima@altamateria');
+Route::POST('/guardamateria','matprima@guardamateria')->name('guardamateria');
+Route::get('/reportemateria','matprima@reportemateria');
+
 Route::get('/altaresponsable','responsable@altaresponsable');
 Route::POST('/guardaresp','responsable@guardaresp')->name('guardaresp');
 Route::get('/reporteresps','responsable@reporteresps');
