@@ -56,12 +56,12 @@ class encargado extends Controller
 		//NUNCA SE RECIBEN LOS ARCHIVOS(img,doc,etc.) PERO SE VALIDA :D
 		//VALIDACION
 		 $this->validate($request,[
-            'Nom_enc'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-            'Usuario'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-			'Contrasena'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-			'Ap_penc'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-			'Ap_menc'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-            'RFC_enc'=>'required',['regex:/^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)([A-Z0-9]{4})$/'],
+            'Nom_enc'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+            'Usuario'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+			'Contrasena'=>'required',
+			'Ap_penc'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+			'Ap_menc'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+            'RFC_enc'=>'required|regex:/^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)([A-Z0-9]{4})$/'],
             'Imagen_enc' =>'image|mimes:jpg,png,gif',
 
             ]);
@@ -74,7 +74,7 @@ class encargado extends Controller
 	\Storage::disk('local')->put($img2, \File::get($file)); //hace la transferencia
 }
 else{
-	$img2= 'noavatar.png';
+	$img2= 'noavatar.jpg';
 }
 
 

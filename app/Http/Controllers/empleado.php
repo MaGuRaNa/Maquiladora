@@ -40,13 +40,14 @@ class empleado extends Controller
 		
 		
 		$this->validate($request,[
-	     'idempl'=>'required|numeric',
-		 'nomempl'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-         'appempl'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-         'apmempl'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-		 'rfcempl'=>'required',['regex:/^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)([A-Z0-9]{4})$/'],
-		 'telempl'=>'required',['regex:/^[0-9]{10}$/'],
-		 'dirempl'=>'required',['regex:/^[A-Z][0-9][A-Z,a-z, ,ñ,á,é,í,ó,ú]$/'],
+
+		 'nomempl'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+         'appempl'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/',
+         'apmempl'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/',
+        'rfcempl'=>'required|regex:/^[A-Z]{4}[0-9]{6}[0-9,A-Z]{3}$/',
+//		 'rfcempl'=>['regex:/^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)([A-Z0-9]{4})$/'],
+		 'telempl'=>'required|numeric|regex:/^[0-9]{10}+$/',
+		 'dirempl'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
 	     ]);
         
 		 //Iniciamos el modelo empleado
