@@ -308,6 +308,10 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="altaempleado">Empleados</a></li>
                                 <li><a href="altaproveedor">Proveedor</a></li>
+                                <li><a href="altamateria">Materia Prima</a></li>
+                                <li><a href="altaresponsable">Responsable</a></li>
+                                <li><a href="altaempresa">Empresa</a></li>
+                                <li><a href="altaencargado">Encargado</a></li>
                             </ul>
                         </li>
                         <li class="nav-label">Layout</li>
