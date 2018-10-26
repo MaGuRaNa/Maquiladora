@@ -21,6 +21,8 @@ Route::get('/saludo', function () {
  
 //VISTAS
 
+Route::get('/index','inicio@index');
+
 Route::get('/altaempleado','empleado@altaempleado');
 Route::POST('/guardaempleado','empleado@guardaempleado')->name('guardaempleado');
 Route::get('/reporteempleado','empleado@reporteempleado');
