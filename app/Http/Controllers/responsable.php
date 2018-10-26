@@ -23,9 +23,15 @@ class responsable extends Controller
     	                          ->get();
     	$clavequesigue = responsables::orderBy('Id_resp','desc')
     	                          ->take(1)
-    	                          ->get();
+								  ->get();
+								  $enm = responsables::find(1);
+								  if(!$enm){
+									  $resp=1;
+								  }
+								  if(!$enm!=1){
+									$resp = $clavequesigue[0]->Id_resp+1;
+								}
 
-    	$resp = $clavequesigue[0]->Id_resp+1;
 	
     	
         //return $carreras; //para ver si funciona la seleccion de campos 

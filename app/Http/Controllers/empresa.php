@@ -17,9 +17,15 @@ class empresa extends Controller
     	//Select * From carreras -> //$carreras=carreras::all();
     	$clavequesigue = empresas::orderBy('Id_empresa','desc')
     	                          ->take(1)
-    	                          ->get();
+								  ->get();
+								  $enm = empresas::find(1);
+								  if(!$enm){
+									  $empresa=1;
+								  }
+								  if(!$enm!=1){
+									$empresa = $clavequesigue[0]->Id_empresa+1;
+								}
 
-    	$empresa = $clavequesigue[0]->Id_empresa+1;
 	
     	
         //return $carreras; //para ver si funciona la seleccion de campos 

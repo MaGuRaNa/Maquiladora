@@ -25,8 +25,14 @@ class encargado extends Controller
 		$clavequesigue =encargado_maquiladoras::orderBy('Id_em','desc')
     	                          ->take(1)
     	                          ->get();
-
-    	$em = $clavequesigue[0]->Id_em+1;
+								  $enm = encargado_maquiladoras::find(1);
+								  if(!$enm){
+									  $em=1;
+								  }
+								  if(!$enm!=1){
+									$em = $clavequesigue[0]->Id_em+1;
+								}
+											   
 	
 	
     	
