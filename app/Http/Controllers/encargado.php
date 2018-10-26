@@ -32,7 +32,7 @@ class encargado extends Controller
 								  if(!$enm!=1){
 									$em = $clavequesigue[0]->Id_em+1;
 								}
-											   
+	 										   
 	
 	
     	

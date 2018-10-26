@@ -25,7 +25,7 @@ class responsable extends Controller
     	                          ->take(1)
 								  ->get();
 								  $enm = responsables::find(1);
-								  if(!$enm){
+								  if(!$enm){    
 									  $resp=1;
 								  }
 								  if(!$enm!=1){
