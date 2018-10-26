@@ -15,7 +15,7 @@ class empresa extends Controller
     {
     	//ORM ELOQUENT
 		//Select * From carreras -> //$carreras=carreras::all();
-		//cambguy
+		//empresa
     	$clavequesigue = empresas::orderBy('Id_empresa','desc')
     	                          ->take(1)
 								  ->get();

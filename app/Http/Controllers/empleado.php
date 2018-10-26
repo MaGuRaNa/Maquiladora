@@ -11,7 +11,7 @@ class empleado extends Controller
 {
     public function altaempleado()
     {
-
+//empleado
         $clavesiguiente = empleados::orderBy('Id_emp','desc')
 								->take(1)
 								->get();

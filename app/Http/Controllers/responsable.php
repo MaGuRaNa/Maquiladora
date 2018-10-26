@@ -16,7 +16,7 @@ class responsable extends Controller
 {
      public function altaresponsable()
     {
-    	//ORM ELOQUENT
+//responsable    	//ORM ELOQUENT
     	//Select * From carreras -> //$carreras=carreras::all();
     	$empresas=empresas::where('Activo_empr','=','1')
     	                          ->orderBy('Nomb_emp','Asc')
