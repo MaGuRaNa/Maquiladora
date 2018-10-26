@@ -46,7 +46,7 @@ class empleado extends Controller
          'apmempl'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
 		 'rfcempl'=>'required',['regex:/^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)([A-Z0-9]{4})$/'],
 		 'telempl'=>'required',['regex:/^[0-9]{10}$/'],
-		 'dirempl'=>'required',['regex:/^[A-Z][0-9][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
+		 'dirempl'=>'required',['regex:/^[A-Z][0-9][A-Z,a-z, ,ñ,á,é,í,ó,ú]$/'],
 	     ]);
         
 		 //Iniciamos el modelo empleado

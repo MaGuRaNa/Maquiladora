@@ -254,35 +254,25 @@
                                 <li><a href="index1.html">Analytics </a></li>
                             </ul>
                         </li>
-                        <li class="nav-label">Apps</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Email</span></a>
+                         <li class="nav-label">Features</li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">FORMULARIOS <span class="label label-rouded label-danger pull-right">9</span></span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="email-compose.html">Compose</a></li>
-                                <li><a href="email-read.html">Read</a></li>
-                                <li><a href="email-inbox.html">Inbox</a></li>
+                                <li><a href="altaempleado">Empleados</a></li>
+                                <li><a href="altaproveedor">Proveedor</a></li>
+                                <li><a href="altamateria">Materia Prima</a></li>
+                                <li><a href="altaresponsable">Responsable</a></li>
+                                <li><a href="altaempresa">Empresa</a></li>
+                                <li><a href="altaencargado">Encargado</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Charts</span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">CONSULTAS<span class="label label-rouded label-warning pull-right">9</span></span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="chart-flot.html">Flot</a></li>
-                                <li><a href="chart-morris.html">Morris</a></li>
-                                <li><a href="chart-chartjs.html">ChartJs</a></li>
-                                <li><a href="chart-chartist.html">Chartist </a></li>
-                                <li><a href="chart-amchart.html">AmChart</a></li>
-                                <li><a href="chart-echart.html">EChart</a></li>
-                                <li><a href="chart-sparkline.html">Sparkline</a></li>
-                                <li><a href="chart-peity.html">Peity</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-label">Features</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Bootstrap UI <span class="label label-rouded label-warning pull-right">6</span></span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="ui-alert.html">Alert</a></li>
-                                <li><a href="ui-button.html">Button</a></li>
-                                <li><a href="ui-dropdown.html">Dropdown</a></li>
-                                <li><a href="ui-progressbar.html">Progressbar</a></li>
-                                <li><a href="ui-tab.html">Tab</a></li>
-                                <li><a href="ui-typography.html">Typography</a></li>
+                                <li><a href="reporteempleado">Empleados</a></li>
+                                <li><a href="reporteproveedores">Proveedor</a></li>
+                                <li><a href="reportemateria">Materia Prima</a></li>
+                                <li><a href="reporteresps">Responsable</a></li>
+                                <li><a href="reportemp">Empresa</a></li>
+                                <li><a href="reportenc">Encargado</a></li>
                             </ul>
                         </li>
 						<li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Components <span class="label label-rouded label-danger pull-right">6</span></span></a>
@@ -304,16 +294,27 @@
                                 <li><a href="form-dropzone.html">Dropzone</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">FORMULARIOS <span class="label label-rouded label-danger pull-right">9</span></span></a>
+                        <li class="nav-label">Apps</li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Email</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="altaempleado">Empleados</a></li>
-                                <li><a href="altaproveedor">Proveedor</a></li>
-                                <li><a href="altamateria">Materia Prima</a></li>
-                                <li><a href="altaresponsable">Responsable</a></li>
-                                <li><a href="altaempresa">Empresa</a></li>
-                                <li><a href="altaencargado">Encargado</a></li>
+                                <li><a href="email-compose.html">Compose</a></li>
+                                <li><a href="email-read.html">Read</a></li>
+                                <li><a href="email-inbox.html">Inbox</a></li>
                             </ul>
                         </li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Charts</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="chart-flot.html">Flot</a></li>
+                                <li><a href="chart-morris.html">Morris</a></li>
+                                <li><a href="chart-chartjs.html">ChartJs</a></li>
+                                <li><a href="chart-chartist.html">Chartist </a></li>
+                                <li><a href="chart-amchart.html">AmChart</a></li>
+                                <li><a href="chart-echart.html">EChart</a></li>
+                                <li><a href="chart-sparkline.html">Sparkline</a></li>
+                                <li><a href="chart-peity.html">Peity</a></li>
+                            </ul>
+                        </li>
+                        
                         <li class="nav-label">Layout</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Layout</span></a>
                             <ul aria-expanded="false" class="collapse">
