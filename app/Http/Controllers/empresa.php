@@ -23,7 +23,7 @@ class empresa extends Controller
 	
     	
         //return $carreras; //para ver si funciona la seleccion de campos 
-		return view ("sistema_vistas.altaempresa")
+		return view ("sistema_vistas.altaempresass")
 		->with('Id_empresa',$empresa); //para mandar la información
 	}
 	public function guardarempr(Request $request)
@@ -66,7 +66,7 @@ class empresa extends Controller
 	}	
 	public function reportemp(){
 		$empresas = empresas::orderBy('Nomb_emp','asc')->get();
-		return view ('sistema_vistas.reportemps')
+		return view ('sistema_vistas.reportempss')
 		->with('empresas',$empresas);
 }
 }

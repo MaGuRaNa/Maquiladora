@@ -29,7 +29,7 @@ class responsable extends Controller
 	
     	
         //return $carreras; //para ver si funciona la seleccion de campos 
-		return view ("sistema_vistas.altaresponsable")
+		return view ("sistema_vistas.altaresponsabless")
 		->with('empresas',$empresas) //para mandar la información
 		->with('Id_resp', $resp); //punto y coma va al ultimo ->with
 	}
@@ -74,7 +74,7 @@ class responsable extends Controller
 
 	public function reporteresps(){
 		$responsables = responsables::orderBy('Nombre_resp','asc')->get();
-		return view ('sistema_vistas.reporteresps')
+		return view ('sistema_vistas.reporterespss')
 		->with('responsables',$responsables);
 
 	}

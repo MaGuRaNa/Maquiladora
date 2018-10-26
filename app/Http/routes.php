@@ -14,3 +14,41 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/saludo', function () {
+    echo "hola mundo";
+});
+ 
+//VISTAS
+
+Route::get('/altaresponsable','responsable@altaresponsable');
+Route::POST('/guardaresp','responsable@guardaresp')->name('guardaresp');
+Route::get('/reporteresps','responsable@reporteresps');
+
+Route::get('/altaempresa','empresa@altaempresa');
+Route::POST('/guardarempr','empresa@guardarempr')->name('guardarempr');
+Route::get('/reportemp','empresa@reportemp');
+
+
+Route::get('/altaencargado','encargado@altaencargado');
+Route::POST('/guardaenc','encargado@guardaenc')->name('guardaenc');
+Route::get('/reportenc','encargado@reportenc');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

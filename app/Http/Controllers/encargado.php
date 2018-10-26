@@ -8,7 +8,7 @@ use App\Http\Requests;
 
 use App\empresas;
 
-use App\encargados;
+use App\encargado_maquiladoras;
 
 
 
@@ -22,12 +22,18 @@ class encargado extends Controller
     	                          ->orderBy('Nomb_emp','Asc')
                                   ->get();
         
-    
+		$clavequesigue =encargado_maquiladoras::orderBy('Id_em','desc')
+    	                          ->take(1)
+    	                          ->get();
+
+    	$em = $clavequesigue[0]->Id_em+1;
+	
 	
     	
         //return $carreras; //para ver si funciona la seleccion de campos 
-		return view ("sistema_vistas.altaencargado")
-        ->with('empresas',$empresas); //para mandar la información
+		return view ("sistema_vistas.altaencargadoss")
+        ->with('empresas',$empresas) //para mandar la información
+		->with('Id_em', $em); //punto y coma va al ultimo ->with
 
     }
 	public function guardaenc(Request $request)
@@ -64,16 +70,21 @@ class encargado extends Controller
 else{
 	$img2= 'noavatar.png';
 }
+
+
 		//Cargar datos a la base
 		$enc = new encargado_maquiladoras;
 		$enc ->Usuario = $request->Usuario;  //Izquierda campos de la tabla derechos campos de la vista
-		$enc ->Contrasena = $request->Contrasena;
+		$user_pass = $request->Contrasena;
+		$salt = md5($user_pass);
+		$password_encriptado = crypt($user_pass, $salt);
+		$enc ->Contrasena = $password_encriptado;
         $enc ->Nom_enc = $request->Nom_enc;
      	$enc ->Ap_penc =$request->Ap_penc;
     	$enc ->Ap_menc=$request->Ap_menc;
 		$enc ->RFC_enc =$request->RFC_enc;
 		$enc ->Id_empresa=$request->Id_empresa;
-        $enc ->Activo_resp = 1;
+        $enc ->Activo_enc = 1;
         $enc ->Imagen_enc = $img2;
 
 		
@@ -87,5 +98,11 @@ else{
 		->with('proceso',$proceso)
 		->with('mensaje',$mensaje);
 	}	
+	public function reportenc(){
+		$enc = encargado_maquiladoras::orderBy('Nom_enc','asc')->get();
+		return view ('sistema_vistas.reportencs')
+		->with('encargado_maquiladoras',$enc);
+
+	}
 }	
     
