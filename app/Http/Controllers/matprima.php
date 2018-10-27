@@ -45,10 +45,10 @@ class matprima extends Controller
 		
 		$this->validate($request,[
 	     'idmat'=>'required|numeric',
-		 'nommat'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-		 'desc'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
+		 'nommat'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+		 'desc'=>'required|regex:/^[A-Z,0-9,a-z, ,ñ,é,í,á,ó,ú]*$/',
 		 'cant'=>'required|numeric',
-		 'pes'=>'required',['regex:/^[0-9]+[.][0-9]{2}$/']
+		 'pes'=>'required|regex:/^[0-9]+[.][0-9]{2}$/',
 	     ]);
 		 
         

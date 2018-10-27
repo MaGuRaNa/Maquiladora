@@ -51,10 +51,10 @@ class responsable extends Controller
 		//VALIDACION
 		 $this->validate($request,[
 			'Id_resp'=>'required|numeric',
-			'Nombre_resp'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-			'app'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-			'apm'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-			'rfc'=>'required',['regex:/^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)([A-Z0-9]{4})$/'],
+			'Nombre_resp'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+			'app'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+			'apm'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+			'rfc'=>'required|regex:/^[A-Z]{4}[0-9]{6}[0-9,A-Z]{3}$/',
 			]);
 			
 		//Cargar datos a la base
@@ -64,7 +64,7 @@ class responsable extends Controller
      	$empr ->Ap_presp =$request->app;
     	$empr ->Ap_mresp=$request->apm;
 		$empr ->RFC_resp =$request->rfc;
-		$empr ->Id_empresa=$request->Id_empresa;
+		$empr ->Id_empresa=$request->idempr;
 		$empr ->Activo_resp = 1;
 		
 		

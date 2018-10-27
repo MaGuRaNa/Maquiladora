@@ -37,7 +37,12 @@ class empresa extends Controller
     {
         $Nomb_emp = $request->Nombre_resp;
 		$Id_empresa = $request->Id_resp;
-		$Ubicacion= $request->Ubicacion;
+//		$Ubicacion= $request->Ubicacion;
+        $Call= $request->Calle;
+        $Col= $request->Col;
+        $Loc= $request->loc;
+        $Nui= $request->nui;
+        $Nue= $request->nue;
 		$CP= $request->CP;
 		$Telefono= $request->Telefono;
 
@@ -45,17 +50,24 @@ class empresa extends Controller
 		//VALIDACION
 		 $this->validate($request,[
             'Id_empresa'=>'required|numeric',
-			'Nomb_emp'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-			'Ubicacion'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-			'CP'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-			'Telefono'=>'required',['regex:/^[0-9]{10}+$/'],
+			'Nomb_emp'=>'required',
+			'Calle'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+             'Col'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+             'loc'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+            'nui'=>'required|integer', 
+            'nue'=>'required|integer', 
+			'CP'=>'required|regex:/^[0-9]{5}$/',
+			'Telefono'=>'required|regex:/^[0-9]{10}$/',
 			]);
 			
 		//Cargar datos a la base
+        
+        $Ubicacion = $Call.", ".$Col.", ".$Loc.", No. int. ".$Nui.", No. ext. ".$Nue;
+        
 		$empre = new empresas;
 		$empre ->Id_empresa = $request->Id_empresa;  //Izquierda campos de la tabla derechos campos de la vista
 		$empre ->Nomb_emp = $request->Nomb_emp;
-     	$empre ->Ubicacion =$request->Ubicacion;
+     	$empre ->Ubicacion = $Ubicacion;
     	$empre ->CP=$request->CP;
 		$empre ->Telefono =$request->Telefono;
 		$empre ->Id_empresa=$request->Id_empresa;

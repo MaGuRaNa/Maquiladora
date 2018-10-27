@@ -21,7 +21,7 @@ Formularios
                                 <label class="col-lg-4 col-form-label" for="encargado">ID ENCARGADO<span class="text-danger">*</span></label>
                                 <div class="col-lg-6">
                                     <input class="form-control" type='text' id="Id_em" name='Id_em' value="{{$Id_em}}" readonly='readonly'>
-                                                                   </div>
+                                </div>
                             </div>
 
                             <div class="form-group row">
@@ -29,8 +29,8 @@ Formularios
                                 <div class="col-lg-6">
                                     <input class="form-control" type='text' id="Usuario" name='Usuario' value="{{old('Usuario')}}">
                                     @if($errors->first('Usuario'))
-        <i> {{ $errors->first('Usuario') }} </i>
-        @endif 
+                                    <i> {{ $errors->first('Usuario') }} </i>
+                                    @endif
                                 </div>
 
                             </div>
@@ -70,7 +70,7 @@ Formularios
                                     @if($errors->first('Ap_menc'))
                                     <i> {{ $errors->first('Ap_menc') }} </i>
                                     @endif
-                                                 
+
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -80,31 +80,31 @@ Formularios
                                     @if($errors->first('RFC_enc'))
                                     <i> {{ $errors->first('RFC_enc') }} </i>
                                     @endif
-                                                 
+
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="Telefono">SELECCIONE UNA FOTO<span class="text-danger">*</span></label>
                                 <div class="col-lg-6">
-                                    <input class="form-control" type='file' id="Imagen_enc" name='Imagen_enc' >
+                                    <input class="form-control" type='file' id="Imagen_enc" name='Imagen_enc'>
                                     @if($errors->first('Imagen_enc'))
                                     <i> {{ $errors->first('Imagen_enc') }} </i>
                                     @endif
-                                                 
+
                                 </div>
                             </div>
                             <div class="form-group row">
-                            <label class="col-lg-4 col-form-label" for="Telefono">SELECCIONE UNA EMPRESA<span class="text-danger">*</span></label>
-                            <div class="col-lg-6">
+                                <label class="col-lg-4 col-form-label" for="Telefono">SELECCIONE UNA EMPRESA<span class="text-danger">*</span></label>
+                                <div class="col-lg-6">
 
-                             <select name='Id_empresa' class="form-control custom-select">
-@foreach($empresas as $emp)
-<option value='{{$emp->Id_empresa}}'>{{$emp->Nomb_emp}}</option>
-@endforeach
- </select>
+                                    <select name='Id_empresa' class="form-control custom-select">
+                                        @foreach($empresas as $emp)
+                                        <option value='{{$emp->Id_empresa}}'>{{$emp->Nomb_emp}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                            </div>
-                            
+
                             <div class="form-group row">
                                 <div class="col-lg-8 ml-auto">
                                     <button type="submit" class="btn btn-primary">GUARDAR</button>

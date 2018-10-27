@@ -35,7 +35,11 @@ class empleado extends Controller
 		$Ap_mat = $request->apmempl;
 		$RFC= $request->rfcempl;
 		$Telefono = $request->telempl;
-        $Direccion = $request->dirempl;
+        $Call= $request->Calle;
+        $Col= $request->Col;
+        $Loc= $request->loc;
+        $Nui= $request->nui;
+        $Nue= $request->nue;
 		///NUNCA SE RECIBEN LOS ARCHIVOS
 		
 		
@@ -44,12 +48,17 @@ class empleado extends Controller
 		 'nomempl'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
          'appempl'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/',
          'apmempl'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/',
-        'rfcempl'=>'required|regex:/^[A-Z]{4}[0-9]{6}[0-9,A-Z]{3}$/',
+         'rfcempl'=>'required|regex:/^[A-Z]{4}[0-9]{6}[0-9,A-Z]{3}$/',
 //		 'rfcempl'=>['regex:/^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)([A-Z0-9]{4})$/'],
 		 'telempl'=>'required|numeric|regex:/^[0-9]{10}+$/',
-		 'dirempl'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+		 'Calle'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+             'Col'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+             'loc'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+            'nui'=>'required|integer', 
+            'nue'=>'required|integer',
 	     ]);
         
+             $Direccion = $Call.", ".$Col.", ".$Loc.", No. int. ".$Nui.", No. ext. ".$Nue;
 		 //Iniciamos el modelo empleado
 		    $emple = new empleados;
 			$emple->Id_emp = $request->idempl;
@@ -58,7 +67,7 @@ class empleado extends Controller
 			$emple->Ap_mat= $request->apmempl;
 			$emple->RFC=$request->rfcempl;
 			$emple->Telefono=$request->telempl;
-			$emple->Direccion=$request->dirempl;
+			$emple->Direccion=$Direccion;
             $emple->Activo_empl=1;
             $emple->save();
 		//$proceso = "Empleado";	

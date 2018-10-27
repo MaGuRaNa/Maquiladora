@@ -57,12 +57,14 @@ class encargado extends Controller
 		//VALIDACION
 		 $this->validate($request,[
             'Nom_enc'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
-            'Usuario'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+            'Usuario'=>'required',
 			'Contrasena'=>'required',
 			'Ap_penc'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
 			'Ap_menc'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
-            'RFC_enc'=>'required|regex:/^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)([A-Z0-9]{4})$/'],
-            'Imagen_enc' =>'image|mimes:jpg,png,gif',
+            'RFC_enc'=>'required|regex:/^[A-Z]{4}[0-9]{6}[0-9,A-Z]{3}$/',
+
+//            'RFC_enc'=>'required|regex:/^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)([A-Z0-9]{4})$/'],
+            'Imagen_enc' =>'image|mimes:jpg,png,gif,jpeg'
 
             ]);
             
