@@ -62,7 +62,7 @@ class matprima extends Controller
 			$matp->Descripcion =$request->desc;
 			$matp->Cantidad= $request->cant;
 			$matp->Peso=$request->pes;
-            $matp->Activo_mat=1;
+          
             $matp->Fecha=$ad;
 			$matp->save();
 		return redirect('/altamateria');//Redireccion a la ruta

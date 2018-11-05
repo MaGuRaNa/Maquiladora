@@ -92,7 +92,7 @@ else{
     	$enc ->Ap_menc=$request->Ap_menc;
 		$enc ->RFC_enc =$request->RFC_enc;
 		$enc ->Id_empresa=$request->Id_empresa;
-        $enc ->Activo_enc = 1;
+        
         $enc ->Imagen_enc = $img2;
 
 		

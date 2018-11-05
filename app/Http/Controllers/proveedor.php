@@ -41,7 +41,7 @@ class proveedor extends Controller
     
     public function guardaproveedor(Request $request)
     {
-		$Id_emp = $request->idprov;
+		$Id_prov = $request->idprov;
 		$NombreProv = $request->nomprov;
 		$Ap_pprov= $request->appprov;
 		$Ap_mprov = $request->apmprov;
@@ -66,7 +66,6 @@ class proveedor extends Controller
 			$prov->Ap_pprov =$request->appprov;
 			$prov->Ap_mprov= $request->apmprov;
 			$prov->RFC_prov=$request->rfcprov;
-            $prov->Activo_prov=1;
 			$prov->Id_empresa=$request->idempr;
 			$prov->save();
 		return redirect('/altaproveedor');//Redireccion a la ruta

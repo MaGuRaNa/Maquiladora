@@ -65,7 +65,7 @@ class responsable extends Controller
     	$empr ->Ap_mresp=$request->apm;
 		$empr ->RFC_resp =$request->rfc;
 		$empr ->Id_empresa=$request->idempr;
-		$empr ->Activo_resp = 1;
+		
 		
 		
 
