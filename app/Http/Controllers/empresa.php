@@ -35,8 +35,8 @@ class empresa extends Controller
 	}
 	public function guardarempr(Request $request)
     {
-        $Nomb_emp = $request->Nombre_resp;
-		$Id_empresa = $request->Id_resp;
+        $Nomb_emp = $request->Nomb_emp;
+		$Id_empresa = $request->Id_empresa;
 //		$Ubicacion= $request->Ubicacion;
         $Call= $request->Calle;
         $Col= $request->Col;
@@ -51,7 +51,7 @@ class empresa extends Controller
 		 $this->validate($request,[
             'Id_empresa'=>'required|numeric',
 			'Nomb_emp'=>'required',
-			'Calle'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+			'Calle'=>'required|regex:/^[A-Z,a-z, ,ñ,é,í,á,ó,ú,0-9]*$/',
              'Col'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
              'loc'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
             'nui'=>'required|integer', 
@@ -62,18 +62,17 @@ class empresa extends Controller
 			
 		//Cargar datos a la base
         
-        $Ubicacion = $Call.", ".$Col.", ".$Loc.", No. int. ".$Nui.", No. ext. ".$Nue;
         
 		$empre = new empresas;
-		$empre ->Id_empresa = $request->Id_empresa;  //Izquierda campos de la tabla derechos campos de la vista
-		$empre ->Nomb_emp = $request->Nomb_emp;
-     	$empre ->Ubicacion = $Ubicacion;
-    	$empre ->CP=$request->CP;
-		$empre ->Telefono =$request->Telefono;
-		$empre ->Id_empresa=$request->Id_empresa;
-		$empre ->Activo_empr = 1;
-		
-		
+		$empre->Id_empresa = $request->Id_empresa;  //Izquierda campos de la tabla derechos campos de la vista
+		$empre->Nomb_emp = $request->Nomb_emp;
+     	$empre->Calle_emp=$request->Calle;
+        $empre->Colonia_emp=$request->Col;
+        $empre->Local_emp=$request->loc;
+        $empre->Numint_emp=$request->nui;
+        $empre->Numext_emp=$request->nue;
+    	$empre->CP=$request->CP;
+		$empre->Telefono=$request->Telefono;	
 
 		$empre-> save();
 

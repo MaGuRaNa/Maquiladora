@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class empresas extends Model
 {
     protected $primaryKey = 'Id_empresa';
-    protected $fillable=['Id_empresa','nomb_emp','ubicacion','CP','Telefono','Activo_empr'];
+    protected $fillable=['Id_empresa','Nomb_emp','Calle_emp','Colonia_emp','Local_emp','Numint_emp','Numext_emp','CP','Telefono'];
+    protected $date=['deleted_at'];
 }

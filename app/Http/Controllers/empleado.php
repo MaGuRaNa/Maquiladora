@@ -51,7 +51,7 @@ class empleado extends Controller
          'rfcempl'=>'required|regex:/^[A-Z]{4}[0-9]{6}[0-9,A-Z]{3}$/',
 //		 'rfcempl'=>['regex:/^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)([A-Z0-9]{4})$/'],
 		 'telempl'=>'required|numeric|regex:/^[0-9]{10}+$/',
-		 'Calle'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+		 'Calle'=>'required|regex:/^[A-Z,a-z, ,ñ,é,í,á,ó,ú,0-9]*$/',
              'Col'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
              'loc'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
             'nui'=>'required|integer', 
@@ -67,8 +67,11 @@ class empleado extends Controller
 			$emple->Ap_mat= $request->apmempl;
 			$emple->RFC=$request->rfcempl;
 			$emple->Telefono=$request->telempl;
-			$emple->Direccion=$Direccion;
-            $emple->Activo_empl=1;
+			$emple->Calle_emple=$request->Calle;
+            $emple->Colonia_emple=$request->Col;
+            $emple->Local_emple=$request->loc;
+            $emple->Numint_emple=$request->nui;
+            $emple->Numext_emple=$request->nue;
             $emple->save();
 		//$proceso = "Empleado";	
 	   // $mensaje="Registro guardado correctamente";

@@ -8,6 +8,7 @@ class empleados extends Model
 {
    protected $primaryKey = 'Id_emp';  
    protected $fillable=['Id_emp','NombreE','Ap_pat','Ap_mat',
-                       'RFC','Telefono','Direccion','Activo_empl'];
+                       'RFC','Telefono','Calle_emple','Colonia_emple','Local_emple','Numint_emple','Numext_emple'];
+     protected $date=['deleted_at'];
 
 }

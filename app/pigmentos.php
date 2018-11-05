@@ -8,5 +8,5 @@ class pigmentos extends Model
 {
    protected $primaryKey = 'Id_pig';  
    protected $fillable=['Id_pig','Clave','Color','Activo_pig'];
- 
+ protected $date=['deleted_at'];
 }
