@@ -96,67 +96,66 @@ class empleado extends Controller
 			->with('proceso',$proceso)
 			->with('mensaje',$mensaje);
 	}
-	public function modificam($idm)
+	public function modificaempleado($Id_emp)
 	{
-		$maestro = maestros::where('idm','=',$idm)->get();
-        $idc = $maestro[0]->idc;
-        $carrera = carreras::where('idc','=',$idc)->get();
-        $demascarreras = carreras::where('idc','!=',$idc)->get();
-		return view('sistema.guardamaestro')
-	                ->with('maestro',$maestro[0])
-                    ->with('idc',$idc)
-                    ->with('carrera',$carrera[0]->nombre)
-                    ->with('demascarreras',$demascarreras);
+		$empleado = empleados::where('Id_emp','=',$Id_emp)->get();
+  
+		return view('sistema_vistas.modificaempleado')
+	                ->with('empleado',$empleado[0]);
 	}
     
-    	public function editamaestro(Request $request) //Request porque recibe todo el formulario
+    	public function editaempleado(Request $request) //Request porque recibe todo el formulario
 	{
-		$nombre = $request->nombre;
-		$idm = $request->idm;
-		$edad= $request->edad;
-		$sexo = $request->sexo;
-		$beca= $request->beca;
-		$cp = $request->cp;
+		 $Id_emp = $request->idempl;
+		$NombreE = $request->nomempl;
+		$Ap_pat= $request->appempl;
+		$Ap_mat = $request->apmempl;
+		$RFC= $request->rfcempl;
+		$Telefono = $request->telempl;
+        $Call= $request->Calle;
+        $Col= $request->Col;
+        $Loc= $request->loc;
+        $Nui= $request->nui;
+        $Nue= $request->nue;
 		///NUNCA SE RECIBEN LOS ARCHIVOS
 		
 		
 		$this->validate($request,[
-	     'idm'=>'required|numeric',
-		 'nombre'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-		 'edad'=>'required|integer|min:18|max:60',
-		 'cp'=>'required',['regex:/^[0-9]{5}$/'],
-		 'beca'=>'required',['regex:/^[0-9]+[.][0-9]{2}$/'],
-		 'archivo'=>'image|mimes:jpg,jpeg,png,gif'
+
+		 'nomempl'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+         'appempl'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/',
+         'apmempl'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/',
+         'rfcempl'=>'required|regex:/^[A-Z]{4}[0-9]{6}[0-9,A-Z]{3}$/',
+//		 'rfcempl'=>['regex:/^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)([A-Z0-9]{4})$/'],
+		 'telempl'=>'required|numeric|regex:/^[0-9]{10}+$/',
+		 'Calle'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+             'Col'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+             'loc'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+            'nui'=>'required|integer', 
+            'nue'=>'required|integer',
 	     ]);
+        
             
-            $file = $request->file('archivo');
-	 if($file!="")
-	 {
-	 $ldate = date('Ymd_His_');
-	 $img = $file->getClientOriginalName();
-	 $img2 = $ldate.$img;
-	 \Storage::disk('local')->put($img2, \File::get($file));
-	 }
-		 
+           
 		 
 		 //insert into maestros(idm,nombre,edad,sexo) values('$idm',
 		 //'$nombre')
-		    $maest = maestros::find($idm);
-			$maest->idm = $request->idm;
-			$maest->nombre = $request->nombre;
-			$maest->edad =$request->edad;
-			$maest->sexo= $request->sexo;
-			$maest->cp=$request->cp;
-			$maest->beca=$request->beca;
-			$maest->idc=$request->idc;
-            if($file!=''){
-                $maest->archivo=$img2;
-            }
-			$maest->save();
-		$proceso = "MODIFICACIÓN DE MAESTRO";	
-	    $mensaje="Registro modificado correctamente";
-		return view('sistema.mensaje')
-		->with('proceso',$proceso)
-		->with('mensaje',$mensaje);
+		    $emple = empleados::find($Id_emp);
+			$emple->Id_emp = $request->idempl;
+			$emple->NombreE = $request->nomempl;
+			$emple->Ap_pat =$request->appempl;
+			$emple->Ap_mat= $request->apmempl;
+			$emple->RFC=$request->rfcempl;
+			$emple->Telefono=$request->telempl;
+			$emple->Calle_emple=$request->Calle;
+            $emple->Colonia_emple=$request->Col;
+            $emple->Local_emple=$request->loc;
+            $emple->Numint_emple=$request->nui;
+            $emple->Numext_emple=$request->nue;
+            
+            $emple->save();
+            
+            return redirect('/reporteempleado');
+		
 	}
 }

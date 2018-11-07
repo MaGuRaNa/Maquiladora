@@ -25,8 +25,11 @@ Consultas
                                     <th>Apellido materno</th>
                                     <th>RFC</th>
                                     <th>Telefono</th>
-                                    <th>Dirección</th>
-                                    <th>Activo</th>
+                                    <th>Calle</th>
+                                    <th>Colonia</th>
+                                    <th>Localidad</th>
+                                    <th>No. int</th>
+                                    <th>No. ext</th>
                                     <th>Modificar</th>
                                     <th>Eliminar</th>
                                 </tr>
@@ -40,10 +43,14 @@ Consultas
                                     <td>{{$em->Ap_mat}}</td>
                                     <td>{{$em->RFC}}</td>
                                     <td>{{$em->Telefono}}</td>
-                                    <td>{{$em->Direccion}}</td>
-                                    <td>{{$em->Activo_empl}}</td>
+                                    <td>{{$em->Calle_emple}}</td>
+                                    <td>{{$em->Colonia_emple}}</td>
+                                    <td>{{$em->Local_emple}}</td>
+                                    <td>{{$em->Numint_emple}}</td>
+                                    <td>{{$em->Numext_emple}}</td>
+
                                     <td>
-                                        <a href="">
+                                        <a href="{{URL::action('empleado@modificaempleado',['Id_emp'=>$em->Id_emp])}}">
                                             Icono M.
                                         </a>
                                     </td>
