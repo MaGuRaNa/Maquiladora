@@ -12,7 +12,7 @@ class Pigmentos extends Migration
       $table->increments('Id_pig');
       $table->string('Clave');
       $table->string('Color');
-	  $table->boolean('Activo_pig');
+	  $table->timestamp('deleted_at');
       $table->rememberToken();
       $table->timestamps(); 
            });

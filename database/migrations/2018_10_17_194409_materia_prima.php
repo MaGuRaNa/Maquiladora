@@ -15,9 +15,9 @@ class MateriaPrima extends Migration
        $table->integer('Cantidad');
        $table->float('Peso',4,2);
        $table->date('Fecha');
-	   $table->boolean('Activo_mat');
-       $table->integer('Id_pig')->unsigned(); //Llave foranea Orden Produccion
-       $table->foreign('Id_pig')->references('Id_pig')->on('Pigmentos');
+	   $table->timestamp('deleted_at');
+      /* $table->integer('Id_pig')->unsigned(); //Llave foranea Orden Produccion
+       $table->foreign('Id_pig')->references('Id_pig')->on('Pigmentos');*/
        $table->rememberToken();
 		    $table->timestamps();
        

@@ -14,10 +14,9 @@ class Proveedor extends Migration
 		    $table->string('Ap_pprov');
 			$table->string('Ap_mprov');
 			$table->string('RFC_prov');
-			$table->boolean('Activo_prov');
             $table->integer('Id_empresa')->unsigned();
 		    $table->foreign('Id_empresa')->references('Id_empresa')->on('Empresas');
-					
+			$table->timestamp('deleted_at'); 		
 			$table->rememberToken();
 		    $table->timestamps();
            });

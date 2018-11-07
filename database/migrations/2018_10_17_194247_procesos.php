@@ -11,7 +11,7 @@ class Procesos extends Migration
         Schema::create('Procesos', function(Blueprint $table){
        $table->increments('Id_proceso');
        $table->string('Nom_proceso');
-	   $table->boolean('Activo_proc');
+	   $table->timestamp('deleted_at');
             $table->rememberToken();
 		    $table->timestamps();
     	});

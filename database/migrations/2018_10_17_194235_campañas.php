@@ -13,9 +13,9 @@ class Campañas extends Migration
      $table->string('Nombre_campaña');
      $table->integer('Numero');
      $table->date('Fecha');
-	 $table->boolean('Activo_camp');
-           $table->rememberToken();
-		    $table->timestamps();
+	 $table->timestamp('deleted_at');
+     $table->rememberToken();
+    $table->timestamps();
     	});
     }
 

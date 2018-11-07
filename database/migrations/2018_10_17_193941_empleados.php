@@ -15,8 +15,12 @@ class Empleados extends Migration
          $table->string('Ap_mat');
          $table->string('RFC');
          $table->bigInteger('Telefono');
-         $table->string('Direccion');
-		 $table->boolean('Activo_empl');
+         $table->string('Calle_emple');
+		 $table->string('Colonia_emple');
+		 $table->string('Local_emple');
+		 $table->string('Numint_emple');
+		 $table->string('Numext_emple');
+		 $table->timestamp('deleted_at');
          $table->rememberToken();
 		 $table->timestamps();
     	});

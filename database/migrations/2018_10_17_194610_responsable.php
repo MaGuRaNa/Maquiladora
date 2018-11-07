@@ -14,10 +14,9 @@ class Responsable extends Migration
 			$table->string('Ap_presp');
 			$table->string('Ap_mresp');
 			$table->string('RFC_resp');
-			$table->boolean('Activo_resp');
             $table->integer('Id_empresa')->unsigned();
 		    $table->foreign('Id_empresa')->references('Id_empresa')->on('Empresas');
-					
+			$table->timestamp('deleted_at');		
 			$table->rememberToken();
 		    $table->timestamps();
         });

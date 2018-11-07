@@ -17,10 +17,9 @@ class EncargadoMaquiladora extends Migration
 			$table->string('Ap_menc');
 			$table->string('RFC_enc');
 			$table->string('Imagen_enc');
-			$table->boolean('Activo_enc');
             $table->integer('Id_empresa')->unsigned();
 		    $table->foreign('Id_empresa')->references('Id_empresa')->on('Empresas');
-					
+			$table->timestamp('deleted_at'); 		
 			$table->rememberToken();
 		    $table->timestamps();
         });
