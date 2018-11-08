@@ -23,7 +23,7 @@ Route::get('/saludo', function () {
 
 Route::get('/index','inicio@index');
 
-Route::get('/altaempleado','empleado@altaempleado');
+ Route::get('/altaempleado','empleado@altaempleado');
 Route::POST('/guardaempleado','empleado@guardaempleado')->name('guardaempleado');
 Route::get('/reporteempleado','empleado@reporteempleado');
 Route::get('/modificaempleado/{Id_emp}/','empleado@modificaempleado')->name('modificaempleado');
