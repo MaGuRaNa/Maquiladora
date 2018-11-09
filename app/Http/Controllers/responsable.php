@@ -18,8 +18,7 @@ class responsable extends Controller
     {
 //responsable    	//ORM ELOQUENT
     	//Select * From carreras -> //$carreras=carreras::all();
-    	$empresas=empresas::where('Activo_empr','=','1')
-    	                          ->orderBy('Nomb_emp','Asc')
+    	$empresas=empresas::orderBy('Nomb_emp','Asc')
     	                          ->get();
     	$clavequesigue = responsables::orderBy('Id_resp','desc')
     	                          ->take(1)
