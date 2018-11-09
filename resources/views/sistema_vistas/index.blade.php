@@ -12,15 +12,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <title>Maquiladora-GC</title>
     <!-- Bootstrap Core CSS -->
-    <link href="css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('css/lib/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
 
-    <link href="css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
-    <link href="css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
-    <link href="css/lib/owl.carousel.min.css" rel="stylesheet" />
-    <link href="css/lib/owl.theme.default.min.css" rel="stylesheet" />
-    <link href="css/helper.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('css/lib/calendar2/semantic.ui.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/lib/calendar2/pignose.calendar.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/lib/owl.carousel.min.css" rel="stylesheet')}}" />
+    <link href="{{asset('css/lib/owl.theme.default.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/helper.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
     <!--[if lt IE 9]>
@@ -33,7 +33,7 @@
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
-			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
     </div>
     <!-- Main wrapper  -->
     <div id="main-wrapper">
@@ -126,8 +126,8 @@
                         <!-- Comment -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
-								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-							</a>
+                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            </a>
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
                                 <ul>
                                     <li>
@@ -175,8 +175,8 @@
                         <!-- Messages -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted  " href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope"></i>
-								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-							</a>
+                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            </a>
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn" aria-labelledby="2">
                                 <ul>
                                     <li>
@@ -254,7 +254,7 @@
                                 <li><a href="index1.html">Analytics </a></li>
                             </ul>
                         </li>
-                         <li class="nav-label">Features</li>
+                        <li class="nav-label">Features</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">FORMULARIOS <span class="label label-rouded label-danger pull-right">9</span></span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="altaempleado">Empleados</a></li>
@@ -275,7 +275,7 @@
                                 <li><a href="reportenc">Encargado</a></li>
                             </ul>
                         </li>
-						<li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Components <span class="label label-rouded label-danger pull-right">6</span></span></a>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-suitcase"></i><span class="hide-menu">Components <span class="label label-rouded label-danger pull-right">6</span></span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="uc-calender.html">Calender</a></li>
                                 <li><a href="uc-datamap.html">Datamap</a></li>
@@ -314,7 +314,7 @@
                                 <li><a href="chart-peity.html">Peity</a></li>
                             </ul>
                         </li>
-                        
+
                         <li class="nav-label">Layout</li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-columns"></i><span class="hide-menu">Layout</span></a>
                             <ul aria-expanded="false" class="collapse">
@@ -382,7 +382,8 @@
             <!-- Bread crumb -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">@yield ('Encabezado')</h3> </div>
+                    <h3 class="text-primary">@yield ('Encabezado')</h3>
+                </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">@yield ('Clasificacion')</a></li>
@@ -408,41 +409,41 @@
     </div>
     <!-- End Wrapper -->
     <!-- All Jquery -->
-    <script src="js/lib/jquery/jquery.min.js"></script>
+    <script src="{{asset('js/lib/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="js/lib/bootstrap/js/popper.min.js"></script>
-    <script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{asset('js/lib/bootstrap/js/popper.min.js')}}"></script>
+    <script src="{{asset('js/lib/bootstrap/js/bootstrap.min.js')}}"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
+    <script src="{{asset('js/jquery.slimscroll.js')}}"></script>
     <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
+    <script src="{{asset('js/sidebarmenu.js')}}"></script>
     <!--stickey kit -->
-    <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="{{asset('js/lib/sticky-kit-master/dist/sticky-kit.min.js')}}"></script>
     <!--Custom JavaScript -->
 
 
     <!-- Amchart -->
-     <script src="js/lib/morris-chart/raphael-min.js"></script>
-    <script src="js/lib/morris-chart/morris.js"></script>
-    <script src="js/lib/morris-chart/dashboard1-init.js"></script>
+    <script src="{{asset('js/lib/morris-chart/raphael-min.js')}}"></script>
+    <script src="{{asset('js/lib/morris-chart/morris.js')}}"></script>
+    <script src="{{asset('js/lib/morris-chart/dashboard1-init.js')}}"></script>
 
 
-	<script src="js/lib/calendar-2/moment.latest.min.js"></script>
+    <script src="{{asset('js/lib/calendar-2/moment.latest.min.js')}}"></script>
     <!-- scripit init-->
-    <script src="js/lib/calendar-2/semantic.ui.min.js"></script>
+    <script src="{{asset('js/lib/calendar-2/semantic.ui.min.js')}}"></script>
     <!-- scripit init-->
-    <script src="js/lib/calendar-2/prism.min.js"></script>
+    <script src="{{asset('js/lib/calendar-2/prism.min.js')}}"></script>
     <!-- scripit init-->
-    <script src="js/lib/calendar-2/pignose.calendar.min.js"></script>
+    <script src="{{asset('js/lib/calendar-2/pignose.calendar.min.js')}}"></script>
     <!-- scripit init-->
-    <script src="js/lib/calendar-2/pignose.init.js"></script>
+    <script src="{{asset('js/lib/calendar-2/pignose.init.js')}}"></script>
 
-    <script src="js/lib/owl-carousel/owl.carousel.min.js"></script>
-    <script src="js/lib/owl-carousel/owl.carousel-init.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="{{asset('js/lib/owl-carousel/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('js/lib/owl-carousel/owl.carousel-init.js')}}"></script>
+    <script src="{{asset('js/scripts.js')}}"></script>
     <!-- scripit init-->
 
-    <script src="js/custom.min.js"></script>
+    <script src="{{asset('js/custom.min.js')}}"></script>
 
 </body>
 
