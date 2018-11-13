@@ -25,12 +25,13 @@ Consultas
                                     <th>Apellido materno</th>
                                     <th>RFC</th>
                                     <th>Empresa</th>
-                                    <th>Activo</th>
+                                    <!-- <th>Activo</th>-->
                                     <th>Modificar</th>
                                     <th>Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
+                               @if(count($proveedores) > 0)
                                 @foreach($proveedores as $pro)
                                 <tr>
                                     <td>{{$pro->Id_prov}}</td>
@@ -38,10 +39,10 @@ Consultas
                                     <td>{{$pro->Ap_pprov}}</td>
                                     <td>{{$pro->Ap_mprov}}</td>
                                     <td>{{$pro->RFC_prov}}</td>
-                                    <td>{{$pro->Id_empresa}}</td>
-                                    <td>{{$pro->Activo_prov}}</td>
+                                    <td>{{$pro->empre}}</td>
+                                  
                                     <td>
-                                        <a href="">
+                                        <a href="{{URL::action('proveedor@modificaproveedor',['Id_prov'=>$pro->Id_prov])}}">
                                             Icono M.
                                         </a>
                                     </td>
@@ -52,6 +53,7 @@ Consultas
                                     </td>
                                 </tr>
                                 @endforeach
+                                @endif
                             </tbody>
                         </table>
                     </div>
