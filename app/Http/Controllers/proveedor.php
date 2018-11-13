@@ -68,88 +68,77 @@ class proveedor extends Controller
 			$prov->RFC_prov=$request->rfcprov;
 			$prov->Id_empresa=$request->idempr;
 			$prov->save();
-		return redirect('/altaproveedor');//Redireccion a la ruta
+		    $proceso ="ALTA REALIZADA";
+            $mensaje ="Registro guardado correctamente";
+            return view('sistema_vistas.mensaje')
+            ->with('proceso',$proceso)
+            ->with('mensaje',$mensaje);//Redireccion a la ruta
 	}		
 	
 	public function reporteproveedor()
 	{
     
-	$proveedores = proveedores::orderBy('Id_prov','asc')->get();
+	$proveedores=\DB::select("SELECT prov.Id_prov,prov.NombreProv,prov.Ap_pprov,prov.Ap_mprov,prov.RFC_prov,empr.Nomb_emp AS empre,prov.deleted_at
+        FROM proveedores AS prov
+        INNER JOIN empresas AS empr ON empr.Id_empresa =  prov.Id_empresa");
         
 	return view ('sistema_vistas.reporteproveedores')
 	->with('proveedores',$proveedores);
 	
 	}
-	public function eliminam($idm)
+	public function eliminam($Id_prov)
 	{
-		    maestros::find($idm)->delete();
+		    maestros::find($Id_prov)->delete();
 		    $proceso = "ELIMINAR MAESTROS";
 			$mensaje = "El maestro ha sido borrado Correctamente";
 			return view ('sistema.mensaje')
 			->with('proceso',$proceso)
 			->with('mensaje',$mensaje);
 	}
-	public function modificam($idm)
+	public function modificaproveedor($Id_prov)
 	{
-		$maestro = maestros::where('idm','=',$idm)->get();
-        $idc = $maestro[0]->idc;
-        $carrera = carreras::where('idc','=',$idc)->get();
-        $demascarreras = carreras::where('idc','!=',$idc)->get();
-		return view('sistema.guardamaestro')
-	                ->with('maestro',$maestro[0])
-                    ->with('idc',$idc)
-                    ->with('carrera',$carrera[0]->nombre)
-                    ->with('demascarreras',$demascarreras);
+		$proveedor = proveedores::where('Id_prov','=',$Id_prov)->get();
+        $Idem = $proveedor[0]->Id_empresa;
+        $empresa = empresas::where('Id_empresa','=',$Idem)->get();
+        $otrasempresas = empresas::where('Id_empresa','!=',$Idem)->get();
+		return view('sistema_vistas.modificaproveedor')
+	                ->with('proveedor',$proveedor[0])
+                    ->with('Idem',$Idem)
+                    ->with('empresa',$empresa[0]->Nomb_emp)
+                    ->with('otrasempresas',$otrasempresas);
 	}
     
-    	public function editamaestro(Request $request) //Request porque recibe todo el formulario
+    	public function editaproveedor(Request $request) //Request porque recibe todo el formulario
 	{
-		$nombre = $request->nombre;
-		$idm = $request->idm;
-		$edad= $request->edad;
-		$sexo = $request->sexo;
-		$beca= $request->beca;
-		$cp = $request->cp;
+		$Id_prov = $request->idprov;
+		$NombreProv = $request->nomprov;
+		$Ap_pprov= $request->appprov;
+		$Ap_mprov = $request->apmprov;
+		$RFC_prov= $request->rfcprov;
+        
 		///NUNCA SE RECIBEN LOS ARCHIVOS
 		
 		
 		$this->validate($request,[
-	     'idm'=>'required|numeric',
-		 'nombre'=>'required',['regex:/^[A-Z][A-Z,a-z, ,ñ,á,é,í,ó,ú]+$/'],
-		 'edad'=>'required|integer|min:18|max:60',
-		 'cp'=>'required',['regex:/^[0-9]{5}$/'],
-		 'beca'=>'required',['regex:/^[0-9]+[.][0-9]{2}$/'],
-		 'archivo'=>'image|mimes:jpg,jpeg,png,gif'
+	     'idprov'=>'required|numeric',
+		 'nomprov'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+		 'appprov'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+		 'apmprov'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+		 'rfcprov'=>'required|regex:/^[A-Z]{4}[0-9]{6}[0-9,A-Z]{3}$/',
 	     ]);
-            
-            $file = $request->file('archivo');
-	 if($file!="")
-	 {
-	 $ldate = date('Ymd_His_');
-	 $img = $file->getClientOriginalName();
-	 $img2 = $ldate.$img;
-	 \Storage::disk('local')->put($img2, \File::get($file));
-	 }
-		 
 		 
 		 //insert into maestros(idm,nombre,edad,sexo) values('$idm',
 		 //'$nombre')
-		    $maest = maestros::find($idm);
-			$maest->idm = $request->idm;
-			$maest->nombre = $request->nombre;
-			$maest->edad =$request->edad;
-			$maest->sexo= $request->sexo;
-			$maest->cp=$request->cp;
-			$maest->beca=$request->beca;
-			$maest->idc=$request->idc;
-            if($file!=''){
-                $maest->archivo=$img2;
-            }
-			$maest->save();
-		$proceso = "MODIFICACIÓN DE MAESTRO";	
-	    $mensaje="Registro modificado correctamente";
-		return view('sistema.mensaje')
-		->with('proceso',$proceso)
-		->with('mensaje',$mensaje);
+		    $prov = proveedores::find($Id_prov);
+			$prov->Id_prov = $request->idprov;
+			$prov->NombreProv = $request->nomprov;
+			$prov->Ap_pprov =$request->appprov;
+			$prov->Ap_mprov= $request->apmprov;
+			$prov->RFC_prov=$request->rfcprov;
+			$prov->Id_empresa=$request->idempr;
+			$prov->save();
+
+           
+            return redirect('/reporteproveedores');
 	}
 }
