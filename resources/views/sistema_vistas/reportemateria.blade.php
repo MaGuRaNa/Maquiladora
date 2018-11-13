@@ -24,7 +24,7 @@ Consultas
                                     <th>Descripción</th>
                                     <th>Cantidad</th>
                                     <th>Peso</th>
-                                    <th>Fechs</th>
+                                    <th>Fecha</th>
                                     <!--<th>Activo</th>-->
                                     <th>Modificar</th>
                                     <th>Eliminar</th>
@@ -38,7 +38,7 @@ Consultas
                                     <td>{{$mat->Descripcion}}</td>
                                     <td>{{$mat->Cantidad}}</td>
                                     <td>{{$mat->Peso}}</td>
-                                    <td>{{$mat->Fecha}}</td>
+                                    <td>{{ \Carbon\Carbon::parse($mat->Fecha)->formatLocalized('%d de %B de %Y')}} </td>
                                     <!--<td>{{$mat->Activo_mat}}</td>-->
                                     <td>
                                         <a href="{{URL::action('matprima@modificamateria',['Id_mat'=>$mat->Id_mat])}}">

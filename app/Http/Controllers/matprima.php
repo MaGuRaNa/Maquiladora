@@ -16,6 +16,7 @@ class matprima extends Controller
 								->take(1)
 								->get();
         
+        
           $matprimas = materia_primas::find(1);
         if(!$matprimas){
             $matid=1;
@@ -76,7 +77,6 @@ class matprima extends Controller
 	{
     
 	$materia_primas = materia_primas::orderBy('Id_mat','asc')->get();
-        
 	return view ('sistema_vistas.reportemateria')
 	->with('materia_primas',$materia_primas);
 	
