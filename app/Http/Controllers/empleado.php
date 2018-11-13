@@ -75,7 +75,11 @@ class empleado extends Controller
             $emple->save();
 		//$proceso = "Empleado";	
 	   // $mensaje="Registro guardado correctamente";
-		return redirect('/altaempleado');
+		$proceso ="ALTA REALIZADA";
+		$mensaje ="Registro guardado correctamente";
+		return view('sistema_vistas.mensaje')
+		->with('proceso',$proceso)
+		->with('mensaje',$mensaje);
 		//->with('proceso',$proceso)
 		
 	}		
