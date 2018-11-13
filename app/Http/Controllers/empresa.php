@@ -76,7 +76,7 @@ class empresa extends Controller
 
 		$empre-> save();
 
-		$proceso ="ALTA DE Empresa";
+		$proceso ="ALTA REALIZADA";
 		$mensaje ="Registro guardado correctamente";
 		return view('sistema_vistas.mensaje')
 		->with('proceso',$proceso)
