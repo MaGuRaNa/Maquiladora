@@ -19,7 +19,7 @@ Consultas
                         <table id="emple" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Id del empleado</th>
+                                    <th>Clave</th>
                                     <th>Nombre</th>
                                     <th>Apellido paterno</th>
                                     <th>Apellido materno</th>

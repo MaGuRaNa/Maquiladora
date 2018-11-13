@@ -19,7 +19,7 @@ Consultas
                         <table id="mates" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Id de maeria</th>
+                                    <th>Clave</th>
                                     <th>Nombre</th>
                                     <th>Descripción</th>
                                     <th>Cantidad</th>
