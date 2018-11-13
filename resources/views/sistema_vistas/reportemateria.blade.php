@@ -25,7 +25,7 @@ Consultas
                                     <th>Cantidad</th>
                                     <th>Peso</th>
                                     <th>Fechs</th>
-                                    <th>Activo</th>
+                                    <!--<th>Activo</th>-->
                                     <th>Modificar</th>
                                     <th>Eliminar</th>
                                 </tr>
@@ -39,9 +39,9 @@ Consultas
                                     <td>{{$mat->Cantidad}}</td>
                                     <td>{{$mat->Peso}}</td>
                                     <td>{{$mat->Fecha}}</td>
-                                    <td>{{$mat->Activo_mat}}</td>
+                                    <!--<td>{{$mat->Activo_mat}}</td>-->
                                     <td>
-                                        <a href="">
+                                        <a href="{{URL::action('matprima@modificamateria',['Id_mat'=>$mat->Id_mat])}}">
                                             Icono M.
                                         </a>
                                     </td>

@@ -1,11 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Mensaje</title>
-</head>
-<body bgcolor="EEAAEE"> 
+
+
+@extends('sistema_vistas.index')
+@section('Encabezado')
+Registro Ralizado exitosamente
+@stop
+@section('Clasificacion')
+Registro
+@stop
+@section('Contenido')
 <h1>{{$proceso}}</h1>
 <br>
-<b>{{$mensaje}}</b>
-</body>
-</html>
+<h1>{{$mensaje}}</h1>
+@stop

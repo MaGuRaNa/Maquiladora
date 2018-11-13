@@ -29,17 +29,25 @@ Route::get('/reporteempleado','empleado@reporteempleado');
 Route::get('/modificaempleado/{Id_emp}/','empleado@modificaempleado')->name('modificaempleado');
 Route::POST('/editaempleado','empleado@editaempleado')->name('editaempleado');
 
+
 Route::get('/altaproveedor','proveedor@altaproveedor');
 Route::POST('/guardaproveedor','proveedor@guardaproveedor')->name('guardaproveedor');
 Route::get('/reporteproveedores','proveedor@reporteproveedor');
+Route::get('/modificaproveedor/{Id_prov}/','proveedor@modificaproveedor')->name('modificaproveedor');
+Route::POST('/editaproveedor','proveedor@editaproveedor')->name('editaproveedor');
+
 
 Route::get('/altamateria','matprima@altamateria');
 Route::POST('/guardamateria','matprima@guardamateria')->name('guardamateria');
 Route::get('/reportemateria','matprima@reportemateria');
+Route::get('/modificamateria/{Id_mat}/','matprima@modificamateria')->name('modificamateria');
+Route::POST('/editamateria','matprima@editamateria')->name('editamateria');
+
 
 Route::get('/altaresponsable','responsable@altaresponsable');
 Route::POST('/guardaresp','responsable@guardaresp')->name('guardaresp');
 Route::get('/reporteresps','responsable@reporteresps');
+
 
 Route::get('/altaempresa','empresa@altaempresa');
 Route::POST('/guardarempr','empresa@guardarempr')->name('guardarempr');

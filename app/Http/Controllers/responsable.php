@@ -70,7 +70,7 @@ class responsable extends Controller
 
 		$empr-> save();
 
-		$proceso ="ALTA DE RESPONSABLES";
+		$proceso ="ALTA REALIZADA";
 		$mensaje ="Registro guardado correctamente";
 		return view('sistema_vistas.mensaje')
 		->with('proceso',$proceso)

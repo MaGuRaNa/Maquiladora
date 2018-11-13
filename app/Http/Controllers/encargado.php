@@ -99,7 +99,7 @@ else{
 
 		$enc-> save();
 
-		$proceso ="ALTA DE ENCARGADO MAQUILADORA";
+		$proceso ="ALTA REALIZADA";
 		$mensaje ="Registro guardado correctamente";
 		return view('sistema_vistas.mensaje')
 		->with('proceso',$proceso)
