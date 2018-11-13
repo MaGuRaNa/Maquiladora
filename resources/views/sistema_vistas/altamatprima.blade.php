@@ -41,7 +41,7 @@ Formularios
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="desc">DESCRIPCION<span class="text-danger">*</span></label>
                                 <div class="col-lg-6">
-                                    <textarea class="form-control" name="desc" id="desc" cols="30" rows="10" value="{{old('desc')}}"></textarea>
+                                    <textarea class="form-control" name="desc" id="desc" cols="30" rows="10" value="">{{old('desc')}}</textarea>
                                     @if($errors->first('desc'))
                                     <i> {{ $errors->first('desc') }} </i>
                                     @endif
