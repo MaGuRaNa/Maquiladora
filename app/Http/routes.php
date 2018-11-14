@@ -23,11 +23,12 @@ Route::get('/saludo', function () {
 
 Route::get('/index','inicio@index');
 
- Route::get('/altaempleado','empleado@altaempleado');
+Route::get('/altaempleado','empleado@altaempleado');
 Route::POST('/guardaempleado','empleado@guardaempleado')->name('guardaempleado');
 Route::get('/reporteempleado','empleado@reporteempleado');
 Route::get('/modificaempleado/{Id_emp}/','empleado@modificaempleado')->name('modificaempleado');
 Route::POST('/editaempleado','empleado@editaempleado')->name('editaempleado');
+Route::get('/eliminaempleado/{Id_emp}','empleado@eliminaempleado')->name('eliminaempleado');
 
 
 Route::get('/altaproveedor','proveedor@altaproveedor');

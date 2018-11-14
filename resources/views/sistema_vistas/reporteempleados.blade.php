@@ -1,4 +1,4 @@
-@extends('sistema_vistas.index')
+@extends('sistema_vistas.indextablas')
 @section('Encabezado')
 Empleados
 @stop
@@ -14,9 +14,8 @@ Consultas
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Tabla de registros</h4>
-                    <!--                    <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>-->
                     <div class="table-responsive m-t-40">
-                        <table id="emple" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                        <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Clave</th>
@@ -30,11 +29,12 @@ Consultas
                                     <th>Localidad</th>
                                     <th>No. int</th>
                                     <th>No. ext</th>
-                                    <th>Modificar</th>
-                                    <th>Eliminar</th>
+                                    <th>Operaciones</th>
+
                                 </tr>
                             </thead>
                             <tbody>
+                               @if(count($empleados) > 0)
                                 @foreach($empleados as $em)
                                 <tr>
                                     <td>{{$em->Id_emp}}</td>
@@ -50,17 +50,26 @@ Consultas
                                     <td>{{$em->Numext_emple}}</td>
 
                                     <td>
-                                        <a href="{{URL::action('empleado@modificaempleado',['Id_emp'=>$em->Id_emp])}}">
-                                            Icono M.
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="">
-                                            Icono E.
-                                        </a>
+
+                                        <center>
+                                            @if($em->deleted_at =="")
+                                            <a href="{{URL::action('empleado@modificaempleado',['Id_emp'=>$em->Id_emp])}}">
+                                                <i class="fas fa-edit"> Editar</i>
+                                            </a>
+
+                                            <a href="{{URL::action('empleado@eliminaempleado',['Id_emp'=>$em->Id_emp])}}">
+                                                <i class="fas fa-trash"> Borrar</i>
+                                            </a>
+                                            @else
+                                            <a href="">
+                                                <i class="fas fa-trash"> Restaurar</i>
+                                            </a>
+                                            @endif
+                                        </center>
                                     </td>
                                 </tr>
                                 @endforeach
+                                @endif
                             </tbody>
                         </table>
                     </div>

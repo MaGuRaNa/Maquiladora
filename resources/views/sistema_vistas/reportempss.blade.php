@@ -1,4 +1,4 @@
-@extends('sistema_vistas.index')
+@extends('sistema_vistas.indextablas')
 @section('Encabezado')
 Empresas
 @stop
@@ -14,31 +14,40 @@ Consultas
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Tabla de registros</h4>
-<!--                    <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>-->
+                    <!--                    <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>-->
                     <div class="table-responsive m-t-40">
-                        <table id="empre" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                        <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
-                                    <tr>
-                                        <th>Clave</th>
-                                        <th>Nombre</th>
-                                        <th>Ubicacion</th>
-                                        <th>Telefono</th>
-                                        <th>Activo</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        @foreach($empresas as $em)
-                                    <tr>
-                                        <td>{{$em->Id_empresa}}</td>
-                                        <td>{{$em->Nomb_emp}}</td>
-                                        <td>{{$em->Ubicacion}}</td>
-                                        <td>{{$em->Telefono}}</td>
-                                        <td>{{$em->Activo_empr}}</td>
-                                    </tr>
-                                    @endforeach
+                                <tr>
+                                    <th>Clave</th>
+                                    <th>Nombre</th>
+                                    <th>Ubicacion</th>
+                                    <th>Telefono</th>
+                                    <th>Operaciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    @foreach($empresas as $em)
+                                <tr>
+                                    <td>{{$em->Id_empresa}}</td>
+                                    <td>{{$em->Nomb_emp}}</td>
+                                    <td>{{$em->Ubicacion}}</td>
+                                    <td>{{$em->Telefono}}</td>
+                                    <td>
+                                        <a href="">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
 
-                               </tbody>
+                            </tbody>
                         </table>
                     </div>
                 </div>

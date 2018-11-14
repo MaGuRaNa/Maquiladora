@@ -9,16 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <title>Ela - Bootstrap Admin Dashboard Template</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}">
+    <title>Maquiladora</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/lib/bootstrap/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
-
-    <link href="{{asset('css/lib/calendar2/semantic.ui.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/lib/calendar2/pignose.calendar.min.css')}}" rel="stylesheet">
-    <link href="{{asset('css/lib/owl.carousel.min.css" rel="stylesheet')}}" />
-    <link href="{{asset('css/lib/owl.theme.default.min.css')}}" rel="stylesheet" />
     <link href="{{asset('css/helper.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -33,7 +28,7 @@
     <!-- Preloader - style you can find in spinners.css -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
-			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
     </div>
     <!-- Main wrapper  -->
     <div id="main-wrapper">
@@ -44,10 +39,10 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
-                        <b><img src="images/logo.png" alt="homepage" class="dark-logo" /></b>
+                        <b><img src="{{asset('images/logo.png')}}" alt="homepage" class="dark-logo" /></b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span><img src="images/logo-text.png" alt="homepage" class="dark-logo" /></span>
+                        <span><img src="{{asset('images/logo-text.png')}}" alt="homepage" class="dark-logo" /></span>
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -126,8 +121,8 @@
                         <!-- Comment -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
-								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-							</a>
+                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            </a>
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
                                 <ul>
                                     <li>
@@ -175,8 +170,8 @@
                         <!-- Messages -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted  " href="#" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-envelope"></i>
-								<div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-							</a>
+                                <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                            </a>
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn" aria-labelledby="2">
                                 <ul>
                                     <li>
@@ -186,28 +181,28 @@
                                         <div class="message-center">
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="images/users/5.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                                <div class="user-img"> <img src="{{asset('images/users/5.jpg')}}" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
                                                 </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="images/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                                                <div class="user-img"> <img src="{{asset('images/users/2.jpg')}}" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>John Doe</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span>
                                                 </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="images/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                                <div class="user-img"> <img src="{{asset('images/users/3.jpg')}}" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>Mr. John</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span>
                                                 </div>
                                             </a>
                                             <!-- Message -->
                                             <a href="#">
-                                                <div class="user-img"> <img src="images/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                                <div class="user-img"> <img src="{{asset('images/users/4.jpg')}}" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
                                                 <div class="mail-contnet">
                                                     <h5>Michael Qin</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
                                                 </div>
@@ -302,7 +297,6 @@
 
 
             @yield ('Contenido')
-
             <!-- End Container fluid  -->
             <!-- footer -->
             <footer class="footer"> © 2018 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a></footer>
@@ -322,30 +316,12 @@
     <script src="{{asset('js/sidebarmenu.js')}}"></script>
     <!--stickey kit -->
     <script src="{{asset('js/lib/sticky-kit-master/dist/sticky-kit.min.js')}}"></script>
+
+
+    <!-- Form validation -->
+    <script src="{{asset('js/lib/form-validation/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('js/lib/form-validation/jquery.validate-init.js')}}"></script>
     <!--Custom JavaScript -->
-
-
-    <!-- Amchart -->
-    <script src="{{asset('js/lib/morris-chart/raphael-min.js')}}"></script>
-    <script src="{{asset('js/lib/morris-chart/morris.js')}}"></script>
-    <script src="{{asset('js/lib/morris-chart/dashboard1-init.js')}}"></script>
-
-
-    <script src="{{asset('js/lib/calendar-2/moment.latest.min.js')}}"></script>
-    <!-- scripit init-->
-    <script src="{{asset('js/lib/calendar-2/semantic.ui.min.js')}}"></script>
-    <!-- scripit init-->
-    <script src="{{asset('js/lib/calendar-2/prism.min.js')}}"></script>
-    <!-- scripit init-->
-    <script src="{{asset('js/lib/calendar-2/pignose.calendar.min.js')}}"></script>
-    <!-- scripit init-->
-    <script src="{{asset('js/lib/calendar-2/pignose.init.js')}}"></script>
-
-    <script src="{{asset('js/lib/owl-carousel/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('js/lib/owl-carousel/owl.carousel-init.js')}}"></script>
-    <script src="{{asset('js/scripts.js')}}"></script>
-    <!-- scripit init-->
-
     <script src="{{asset('js/custom.min.js')}}"></script>
 
 </body>

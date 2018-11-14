@@ -1,4 +1,4 @@
-@extends('sistema_vistas.index')
+@extends('sistema_vistas.indextablas')
 @section('Encabezado')
 Materias primas
 @stop
@@ -16,7 +16,7 @@ Consultas
                     <h4 class="card-title">Tabla de registros</h4>
                     <!--                    <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>-->
                     <div class="table-responsive m-t-40">
-                        <table id="mates" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                        <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Clave</th>
@@ -26,8 +26,7 @@ Consultas
                                     <th>Peso</th>
                                     <th>Fecha</th>
                                     <!--<th>Activo</th>-->
-                                    <th>Modificar</th>
-                                    <th>Eliminar</th>
+                                    <th>Operaciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -42,12 +41,12 @@ Consultas
                                     <!--<td>{{$mat->Activo_mat}}</td>-->
                                     <td>
                                         <a href="{{URL::action('matprima@modificamateria',['Id_mat'=>$mat->Id_mat])}}">
-                                            Icono M.
+                                           <i class="fas fa-edit"></i>
                                         </a>
                                     </td>
                                     <td>
                                         <a href="">
-                                            Icono E.
+                                             <i class="fas fa-trash"></i>
                                         </a>
                                     </td>
                                 </tr>

@@ -1,4 +1,4 @@
-@extends('sistema_vistas.index')
+@extends('sistema_vistas.indexformularios')
 @section('Encabezado')
 Responsables
 @stop

@@ -1,4 +1,4 @@
-@extends('sistema_vistas.index')
+@extends('sistema_vistas.indexformularios')
 @section('Encabezado')
 Empleado
 @stop
@@ -6,6 +6,7 @@ Empleado
 Formularios
 @stop
 @section('Contenido')
+
 <div class="container-fluid">
     <!-- Start Page Content -->
     <div class="row justify-content-center">

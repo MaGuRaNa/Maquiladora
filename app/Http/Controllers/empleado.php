@@ -91,14 +91,15 @@ class empleado extends Controller
 	->with('empleados',$empleados);
 	
 	}
-	public function eliminam($idm)
+	public function eliminaempleado($Id_emp)
 	{
-		    maestros::find($idm)->delete();
-		    $proceso = "ELIMINAR MAESTROS";
-			$mensaje = "El maestro ha sido borrado Correctamente";
-			return view ('sistema.mensaje')
-			->with('proceso',$proceso)
-			->with('mensaje',$mensaje);
+		    empleados::find($Id_emp)->delete();
+		
+			$proceso ="ELIMINACION REALIZADA";
+            $mensaje ="Registro eliminado correctamente";
+            return view('sistema_vistas.mensaje')
+            ->with('proceso',$proceso)
+            ->with('mensaje',$mensaje);
 	}
 	public function modificaempleado($Id_emp)
 	{
