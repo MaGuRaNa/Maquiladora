@@ -15,7 +15,6 @@ Consultas
                 <div class="card-body">
                     <h4 class="card-title">Tabla de registros</h4>
                     <div class="table-responsive m-t-40">
-                       <a href="{{URL::to('/operacionempleado')}}">Historial</a>
                         <table id="example233" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
@@ -54,12 +53,12 @@ Consultas
 
                                         <center>
                                             
-                                            <a href="{{URL::action('empleado@modificaempleado',['Id_emp'=>$em->Id_emp])}}">
-                                                <i class="fas fa-edit"> Editar</i>
+                                            <a href="{{URL::action('empleado@restauraempleado',['Id_emp'=>$em->Id_emp])}}">
+                                                <i class="fas fa-edit"> Restaurar</i>
                                             </a>
 
-                                            <a href="{{URL::action('empleado@eliminaempleado',['Id_emp'=>$em->Id_emp])}}">
-                                                <i class="fas fa-trash"> Borrar</i>
+                                            <a href="">
+                                                <i class="fas fa-trash"> Eliminar</i>
                                             </a>
          
                                         </center>
