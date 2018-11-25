@@ -6,7 +6,7 @@ Encargados
 Formularios
 @stop
 @section('Contenido')
-<div class="container-fluid">
+<div class="container-fluid">   
     <!-- Start Page Content -->
     <div class="row justify-content-center">
         <div class="col-lg-6">

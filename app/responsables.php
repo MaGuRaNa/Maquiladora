@@ -14,3 +14,4 @@ class responsables extends Model
     protected $fillable=['Id_resp','Nombre_resp','Ap_presp','Ap_mresp','RFC_resp','Id_empresa'];
     protected $date=['deleted_at'];
 }
+ 

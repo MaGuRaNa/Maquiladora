@@ -11,7 +11,7 @@ use App\empresas;
 use App\encargado_maquiladoras;
 
 
-
+ 
 class encargado extends Controller
 {
      public function altaencargado()

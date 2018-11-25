@@ -126,7 +126,7 @@ public function restore($id)
     {
         $Nomb_emp = $request->Nomb_emp;
 		$Id_empresa = $request->Id_empresa;
-//		$Ubicacion= $request->Ubicacion;
+//		$Ubicacion= $request->Ubicacion; 
         $Call= $request->Calle;
         $Col= $request->Col;
         $Loc= $request->loc;

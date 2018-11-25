@@ -8,7 +8,7 @@ Consultas
 @section('Contenido')
 
 <div class="container-fluid">
-    <!-- Start Page Content -->
+    <!-- Start Page Content -->  
     <div class="row">
         <div class="col-12">
             <div class="card">

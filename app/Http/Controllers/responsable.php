@@ -10,7 +10,7 @@ use App\empresas;
 
 use App\responsables;
 
-
+ 
 
 class responsable extends Controller
 {

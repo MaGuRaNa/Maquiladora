@@ -9,7 +9,7 @@ Formularios
 <div class="container-fluid">
     <!-- Start Page Content -->
     <div class="row justify-content-center">
-        <div class="col-lg-6">
+        <div class="col-lg-6">  
             <div class="card">
                 <div class="card-body">
                     <div class="form-validation">

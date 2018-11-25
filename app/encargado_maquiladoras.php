@@ -16,3 +16,4 @@ class encargado_maquiladoras extends Model
     protected $date=['deleted_at'];
    
 }
+   
