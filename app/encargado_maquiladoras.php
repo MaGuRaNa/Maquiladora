@@ -3,10 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\SoftDeletes; 
+
 
 class encargado_maquiladoras extends Model
 {
+    use SoftDeletes;
     protected $table ='encargado_maquiladoras';
     protected $guarded = ['_token'];
     protected $primaryKey = 'Id_em';

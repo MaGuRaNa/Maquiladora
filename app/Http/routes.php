@@ -53,6 +53,10 @@ Route::get('/reporteresps','responsable@reporteresps');
 Route::get('/altaempresa','empresa@altaempresa');
 Route::POST('/guardarempr','empresa@guardarempr')->name('guardarempr');
 Route::get('/reportemp','empresa@reportemp');
+Route::get('/empresa_destro/{id}','empresa@destroy_l')->name('emprest');
+Route::get('/empresa_destroy/{id}','empresa@destroy_f')->name('empdest');
+Route::get('/empresa_restore/{id}','empresa@restore');
+
 
 
 Route::get('/altaencargado','encargado@altaencargado');

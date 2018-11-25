@@ -23,7 +23,7 @@ Consultas
                                     <th>Nombre</th>
                                     <th>Ubicacion</th>
                                     <th>Telefono</th>
-                                    <th>Operaciones</th>
+                                    <th>Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,16 +34,18 @@ Consultas
                                     <td>{{$em->Nomb_emp}}</td>
                                     <td>{{$em->Ubicacion}}</td>
                                     <td>{{$em->Telefono}}</td>
-                                    <td>
-                                        <a href="">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
+                                        <td>
+                                            @if($em->deleted_at!="")
+                                            <a href="{{URL::action('empresa@destroy_f',['id'=>$em->Id_empresa])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar registro" >Eliminar Perm</i></a>
+                                        <a href="{{URL::action('empresa@restore',['id'=>$em->Id_empresa])}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Restaurar registro" >Restaurar</a>
+                                        @else
+                                        <a href="{{URL::action('empresa@destroy_l',['id'=>$em->Id_empresa])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar registro" >Eliminarl</i></a>
+                                     <a href="{{URL::action('empresa@modificamp',['id'=>$em->Id_empresa])}}" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Modifica registro" >Modifica</i></a>
+
+                                        
+                                        @endif
                                     </td>
-                                    <td>
-                                        <a href="">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                    </td>
+
                                 </tr>
                                 @endforeach
 
