@@ -22,24 +22,19 @@ Route::get('/saludo', function () {
 //VISTAS
 
 Route::get('/index','inicio@index');
-//Empleado
+
  Route::get('/altaempleado','empleado@altaempleado');
 Route::POST('/guardaempleado','empleado@guardaempleado')->name('guardaempleado');
 Route::get('/reporteempleado','empleado@reporteempleado');
 Route::get('/modificaempleado/{Id_emp}/','empleado@modificaempleado')->name('modificaempleado');
 Route::POST('/editaempleado','empleado@editaempleado')->name('editaempleado');
-//<<<<<< HEAD
-//Proveedor
-//=======
 Route::get('/eliminaempleado/{Id_emp}','empleado@eliminaempleado')->name('eliminaempleado');
 Route::get('/operacionempleado','empleado@operacionempleado');
 Route::get('/restauraempleado/{Id_emp}','empleado@restauraempleado')->name('restauraempleado');
 
-//>>>>>>> origin/master 
 Route::get('/altaproveedor','proveedor@altaproveedor');
 Route::POST('/guardaproveedor','proveedor@guardaproveedor')->name('guardaproveedor');
 Route::get('/reporteproveedores','proveedor@reporteproveedor');
-<<<<<<< HEAD
 Route::get('/modificaproveedor/{Id_prov}/','proveedor@modificaproveedor')->name('modificaproveedor');
 Route::POST('/editaproveedor','proveedor@editaproveedor')->name('editaproveedor');
 Route::get('/eliminaproveedor/{Id_prov}','proveedor@eliminaproveedor')->name('eliminaproveedor');
@@ -52,15 +47,6 @@ Route::get('/modificamateria/{Id_mat}/','matprima@modificamateria')->name('modif
 Route::POST('/editamateria','matprima@editamateria')->name('editamateria');
 Route::get('/eliminaemateria/{Id_mat}','matprima@eliminamateria')->name('eliminamateria');
 
-
-
-=======
-//Materia
-Route::get('/altamateria','matprima@altamateria');
-Route::POST('/guardamateria','matprima@guardamateria')->name('guardamateria');
-Route::get('/reportemateria','matprima@reportemateria');
-//Responsable
->>>>>>> origin
 Route::get('/altaresponsable','responsable@altaresponsable');
 Route::POST('/guardaresp','responsable@guardaresp')->name('guardaresp');
 Route::get('/reporteresps','responsable@reporteresps')->name('respp');
@@ -71,8 +57,6 @@ Route::get('/modificam/{id}','responsable@modificam')->name('modificam');
 Route::POST('/editaresp','responsable@editaresp')->name('editaresp');
 
 
-
-//Empresa
 Route::get('/altaempresa','empresa@altaempresa');
 Route::POST('/guardarempr','empresa@guardarempr')->name('guardarempr');
 Route::get('/reportemp','empresa@reportemp')->name('repem');
@@ -83,7 +67,6 @@ Route::get('/empresa_destro/{id}','empresa@destroy_l')->name('emprest');
 Route::get('/empresa_destroy/{id}','empresa@destroy_f')->name('empdest');
 Route::get('/empresa_restore/{id}','empresa@restore');
 
-//Encargado Maq
 Route::get('/altaencargado','encargado@altaencargado');
 Route::POST('/guardaenc','encargado@guardaenc')->name('guardaenc');
 Route::get('/reportenc','encargado@reportenc')->name('repemq');
