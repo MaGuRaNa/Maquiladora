@@ -12,18 +12,23 @@ class matprima extends Controller
 {
     public function altamateria()
     {
-		  $clavesiguiente=materia_primas::orderBy('Id_mat','desc')
+		  
+		$clavesiguiente = materia_primas::withTrashed()->orderBy('Id_mat','desc')
 								->take(1)
 								->get();
         
-        
-          $matprimas = materia_primas::find(1);
-        if(!$matprimas){
-            $matid=1;
-        }
-        if(!$matprimas!=1){
-           $matid=$clavesiguiente[0]->Id_mat+1; //Ingresa clave automatica en el campo de id
-        }
+        if(count($clavesiguiente)==0)
+			{
+				$matid = 1;
+			}				
+			else
+			{
+           $matid = $clavesiguiente[0]->Id_mat+1;
+			}
+		
+		
+		
+		
        // $ad= Carbon::now()->toDateString();
         setlocale(LC_TIME,'es');
         $date= Carbon::now();
@@ -83,7 +88,7 @@ class matprima extends Controller
 	}
 	public function eliminamateria($Id_mat)
 	{
-		    maestros::find($Id_mat)->delete();
+		    materia_prima::find($Id_mat)->delete();
 		    $proceso = "ELIMINAR MAESTROS";
 			$mensaje = "El maestro ha sido borrado Correctamente";
 			return view ('sistema.mensaje')

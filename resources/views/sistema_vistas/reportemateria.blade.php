@@ -43,9 +43,8 @@ Consultas
                                         <a href="{{URL::action('matprima@modificamateria',['Id_mat'=>$mat->Id_mat])}}">
                                            <i class="fas fa-edit"></i>
                                         </a>
-                                    </td>
-                                    <td>
-                                        <a href="">
+                                    
+                                        <a href="{{URL::action('matprima@eliminamateria',['Id_mat'=>$mat->Id_mat])}}">
                                              <i class="fas fa-trash"></i>
                                         </a>
                                     </td>

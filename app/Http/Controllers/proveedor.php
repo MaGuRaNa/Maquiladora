@@ -21,18 +21,21 @@ class proveedor extends Controller
         /*$empresa=empresa::where('activo','=','Si')
 		                    ->orderBy('nombre','Asc')
 							->get();*/
-          $empresas=empresas::all();
-		  $clavesiguiente = proveedores::orderBy('Id_prov','desc')
+          
+		$empresas=empresas::all();
+		
+		$clavesiguiente = proveedores::withTrashed()->orderBy('Id_prov','desc')
 								->take(1)
 								->get();
         
-          $proveedor = proveedores::find(1);
-        if(!$proveedor){
-            $provid=1;
-        }
-        if(!$proveedor!=1){
-           $provid = $clavesiguiente[0]->Id_prov+1; //Ingresa clave automatica en el campo de id
-        }
+        if(count($clavesiguiente)==0)
+			{
+				$provid = 1;
+			}				
+			else
+			{
+           $provid = $clavesiguiente[0]->Id_prov+1;
+			}
 	 					
 	    return view ("sistema_vistas.altaproveedor")
         ->with('empresas',$empresas)
@@ -86,9 +89,9 @@ class proveedor extends Controller
 	->with('proveedores',$proveedores);
 	
 	}
-	public function eliminam($Id_prov)
+	public function eliminaproveedor($Id_prov)
 	{
-		    maestros::find($Id_prov)->delete();
+		    proveedores::find($Id_prov)->delete();
 		    $proceso = "ELIMINAR MAESTROS";
 			$mensaje = "El maestro ha sido borrado Correctamente";
 			return view ('sistema.mensaje')

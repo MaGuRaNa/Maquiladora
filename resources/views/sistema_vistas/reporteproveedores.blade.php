@@ -44,9 +44,8 @@ Consultas
                                         <a href="{{URL::action('proveedor@modificaproveedor',['Id_prov'=>$pro->Id_prov])}}">
                                            <i class="fas fa-edit"></i>
                                         </a>
-                                    </td>
-                                    <td>
-                                        <a href="">
+                                   
+                                        <a href="{{URL::action('proveedor@eliminaproveedor',['Id_prov'=>$pro->Id_prov])}}">
                                              <i class="fas fa-trash"></i>
                                         </a>
                                     </td>
