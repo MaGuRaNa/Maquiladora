@@ -26,9 +26,16 @@ Route::get('/index','inicio@index');
  Route::get('/altaempleado','empleado@altaempleado');
 Route::POST('/guardaempleado','empleado@guardaempleado')->name('guardaempleado');
 Route::get('/reporteempleado','empleado@reporteempleado');
+Route::get('/operacionempleado','empleado@operacionempleado');
 Route::get('/modificaempleado/{Id_emp}/','empleado@modificaempleado')->name('modificaempleado');
 Route::POST('/editaempleado','empleado@editaempleado')->name('editaempleado');
+<<<<<<< HEAD
 //Proveedor
+=======
+Route::get('/eliminaempleado/{Id_emp}','empleado@eliminaempleado')->name('eliminaempleado');
+Route::get('/restauraempleado/{Id_emp}','empleado@restauraempleado')->name('restauraempleado');
+
+>>>>>>> origin/master
 Route::get('/altaproveedor','proveedor@altaproveedor');
 Route::POST('/guardaproveedor','proveedor@guardaproveedor')->name('guardaproveedor');
 Route::get('/reporteproveedores','proveedor@reporteproveedor');

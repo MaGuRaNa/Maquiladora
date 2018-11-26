@@ -12,17 +12,18 @@ class empleado extends Controller
     public function altaempleado()
     {
 //empleado
-        $clavesiguiente = empleados::orderBy('Id_emp','desc')
+        $clavesiguiente = empleados::withTrashed()->orderBy('Id_emp','desc')
 								->take(1)
 								->get();
         
-        $empleado = empleados::find(1);
-        if(!$empleado){
-            $emplid=1;
-        }
-        if(!$empleado!=1){
-           $emplid = $clavesiguiente[0]->Id_emp+1; //Ingresa clave automatica en el campo de id
-        }
+        if(count($clavesiguiente)==0)
+			{
+				$emplid = 1;
+			}				
+			else
+			{
+           $emplid = $clavesiguiente[0]->Id_emp+1;
+			}
         
 	   return view ("sistema_vistas.altaempleado")
 	   ->with('emplid',$emplid); //Se carga los datos de la variable $emplid
@@ -86,14 +87,28 @@ class empleado extends Controller
 	
 	public function reporteempleado()
 	{
-	$empleados = empleados::orderBy('NombreE','asc')->get();
+	$empleados= empleados::orderBy('Id_emp','asc')->get();
+		
 	return view ('sistema_vistas.reporteempleados')
 	->with('empleados',$empleados);
 	
 	}
+	
+	public function operacionempleado()
+	{
+		$empleados=\DB::select("SELECT Id_emp,NombreE,Ap_pat,Ap_mat,RFC,Telefono,Calle_emple,Colonia_emple,Local_emple,Numint_emple,
+		Numext_emple,deleted_at 
+        FROM empleados where deleted_At IS NOT NULL");
+		
+	return view ('sistema_vistas.reporteoperacionemple')
+	->with('empleados',$empleados);
+	
+	}
+	
 	public function eliminaempleado($Id_emp)
 	{
-		    empleados::find($Id_emp)->delete();
+		    $emple=empleados::find($Id_emp);
+			$emple->delete();
 		
 			$proceso ="ELIMINACION REALIZADA";
             $mensaje ="Registro eliminado correctamente";
@@ -162,5 +177,15 @@ class empleado extends Controller
             
             return redirect('/reporteempleado');
 		
+	}
+	public function restauraempleado($Id_emp)
+	{
+		empleados::withTrashed()->where('Id_emp',$Id_emp)->restore();
+		
+		$proceso = "RESTAURACION DE MAESTRO";	
+	    $mensaje="Registro restaurado correctamente";
+		return view('sistema_vistas.mensaje')
+		->with('proceso',$proceso)
+		->with('mensaje',$mensaje);		
 	}
 }
