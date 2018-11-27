@@ -96,9 +96,12 @@ class empleado extends Controller
 	
 	public function operacionempleado()
 	{
-		$empleados=\DB::select("SELECT Id_emp,NombreE,Ap_pat,Ap_mat,RFC,Telefono,Calle_emple,Colonia_emple,Local_emple,Numint_emple,
-		Numext_emple,deleted_at 
+		$empleados=\DB::select("SELECT *
         FROM empleados where deleted_At IS NOT NULL");
+		
+		/*$empleados=\DB::select("SELECT Id_emp,NombreE,Ap_pat,Ap_mat,RFC,Telefono,Calle_emple,Colonia_emple,Local_emple,Numint_emple,
+		Numext_emple,deleted_at 
+        FROM empleados where deleted_At IS NOT NULL");*/
 		
 	return view ('sistema_vistas.reporteoperacionemple')
 	->with('empleados',$empleados);
@@ -188,4 +191,11 @@ class empleado extends Controller
 		->with('proceso',$proceso)
 		->with('mensaje',$mensaje);		
 	}
+	
+	public function destroy_emple($Id_emp)
+{
+	empleados::withTrashed()->where('Id_emp',$Id_emp)->forceDelete();
+	 return redirect('/reporteempleado');
+
+}
 }

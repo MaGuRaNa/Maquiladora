@@ -18,12 +18,10 @@ Route::get('/', function () {
 Route::get('/saludo', function () {
     echo "hola mundo";
 });
- 
-//VISTAS
 
 Route::get('/index','inicio@index');
 
- Route::get('/altaempleado','empleado@altaempleado');
+Route::get('/altaempleado','empleado@altaempleado');
 Route::POST('/guardaempleado','empleado@guardaempleado')->name('guardaempleado');
 Route::get('/reporteempleado','empleado@reporteempleado');
 Route::get('/modificaempleado/{Id_emp}/','empleado@modificaempleado')->name('modificaempleado');
@@ -31,6 +29,7 @@ Route::POST('/editaempleado','empleado@editaempleado')->name('editaempleado');
 Route::get('/eliminaempleado/{Id_emp}','empleado@eliminaempleado')->name('eliminaempleado');
 Route::get('/operacionempleado','empleado@operacionempleado');
 Route::get('/restauraempleado/{Id_emp}','empleado@restauraempleado')->name('restauraempleado');
+Route::get('/empleado_destroy/{Id_emp}','empleado@destroy_emple')->name('empleado_destroy');
 
 Route::get('/altaproveedor','proveedor@altaproveedor');
 Route::POST('/guardaproveedor','proveedor@guardaproveedor')->name('guardaproveedor');
@@ -38,14 +37,19 @@ Route::get('/reporteproveedores','proveedor@reporteproveedor');
 Route::get('/modificaproveedor/{Id_prov}/','proveedor@modificaproveedor')->name('modificaproveedor');
 Route::POST('/editaproveedor','proveedor@editaproveedor')->name('editaproveedor');
 Route::get('/eliminaproveedor/{Id_prov}','proveedor@eliminaproveedor')->name('eliminaproveedor');
-
+Route::get('/operacionproveedor','proveedor@operacionproveedor');
+Route::get('/restauraproveedor/{Id_prov}','proveedor@restauraproveedor')->name('restauraproveedor');
+Route::get('/proveedor_destroy/{Id_prov}','proveedor@destroy_prov')->name('proveedor_destroy');
 
 Route::get('/altamateria','matprima@altamateria');
 Route::POST('/guardamateria','matprima@guardamateria')->name('guardamateria');
 Route::get('/reportemateria','matprima@reportemateria');
 Route::get('/modificamateria/{Id_mat}/','matprima@modificamateria')->name('modificamateria');
 Route::POST('/editamateria','matprima@editamateria')->name('editamateria');
-Route::get('/eliminaemateria/{Id_mat}','matprima@eliminamateria')->name('eliminamateria');
+Route::get('/eliminamateria/{Id_mat}','matprima@eliminamateria')->name('eliminamateria');
+Route::get('/operacionmateria','matprima@operacionmateria');
+Route::get('/restauramateria/{Id_mat}','matprima@restauramateria')->name('restauramateria');
+Route::get('/materia_destroy/{Id_mat}','matprima@destroy_mat')->name('materia_destroy');
 
 Route::get('/altaresponsable','responsable@altaresponsable');
 Route::POST('/guardaresp','responsable@guardaresp')->name('guardaresp');

@@ -86,12 +86,27 @@ class matprima extends Controller
 	->with('materia_primas',$materia_primas);
 	
 	}
+	
+	public function operacionmateria()
+	{
+		$materia_primas=\DB::select("SELECT *
+        FROM materia_primas where deleted_At IS NOT NULL");
+		
+		/*$empleados=\DB::select("SELECT Id_emp,NombreE,Ap_pat,Ap_mat,RFC,Telefono,Calle_emple,Colonia_emple,Local_emple,Numint_emple,
+		Numext_emple,deleted_at 
+        FROM empleados where deleted_At IS NOT NULL");*/
+		
+	return view ('sistema_vistas.reporteoperacionmateria')
+	->with('materia_primas',$materia_primas);
+	
+	}
+	
 	public function eliminamateria($Id_mat)
 	{
-		    materia_prima::find($Id_mat)->delete();
-		    $proceso = "ELIMINAR MAESTROS";
+		    materia_primas::find($Id_mat)->delete();
+		    $proceso = "ELIMINAR ";
 			$mensaje = "El maestro ha sido borrado Correctamente";
-			return view ('sistema.mensaje')
+			return view ('sistema_vistas.mensaje')
 			->with('proceso',$proceso)
 			->with('mensaje',$mensaje);
 	}
@@ -137,4 +152,21 @@ class matprima extends Controller
 			$matp->save();
 		   return redirect('/reportemateria');
 	}
+	public function restauraempleado($Id_mat)
+	{
+		materia_primas::withTrashed()->where('Id_mat',$Id_mat)->restore();
+		
+		$proceso = "RESTAURACION";	
+	    $mensaje="Registro restaurado correctamente";
+		return view('sistema_vistas.mensaje')
+		->with('proceso',$proceso)
+		->with('mensaje',$mensaje);		
+	}
+	public function destroy_mat($Id_mat)
+{
+	materia_primas::withTrashed()->where('Id_mat',$Id_mat)->forceDelete();
+	 return redirect('/reportemateria');
+
+}
+	
 }

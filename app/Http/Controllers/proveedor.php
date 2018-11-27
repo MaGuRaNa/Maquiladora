@@ -83,18 +83,34 @@ class proveedor extends Controller
     
 	$proveedores=\DB::select("SELECT prov.Id_prov,prov.NombreProv,prov.Ap_pprov,prov.Ap_mprov,prov.RFC_prov,empr.Nomb_emp AS empre,prov.deleted_at
         FROM proveedores AS prov
-        INNER JOIN empresas AS empr ON empr.Id_empresa =  prov.Id_empresa");
+        INNER JOIN empresas AS empr ON empr.Id_empresa =  prov.Id_empresa WHERE prov.deleted_at is NULL");
         
 	return view ('sistema_vistas.reporteproveedores')
 	->with('proveedores',$proveedores);
 	
 	}
+	
+	public function operacionproveedor()
+	{
+		$proveedores=\DB::select("SELECT prov.Id_prov,prov.NombreProv,prov.Ap_pprov,prov.Ap_mprov,prov.RFC_prov,empr.Nomb_emp AS empre,prov.deleted_at
+        FROM proveedores AS prov
+        INNER JOIN empresas AS empr ON empr.Id_empresa =  prov.Id_empresa where prov.deleted_at IS NOT NULL");
+		
+		/*$empleados=\DB::select("SELECT Id_emp,NombreE,Ap_pat,Ap_mat,RFC,Telefono,Calle_emple,Colonia_emple,Local_emple,Numint_emple,
+		Numext_emple,deleted_at 
+        FROM empleados where deleted_At IS NOT NULL");*/
+		
+	return view ('sistema_vistas.reporteoperacionprov')
+	->with('proveedores',$proveedores);
+	
+	}
+	
 	public function eliminaproveedor($Id_prov)
 	{
 		    proveedores::find($Id_prov)->delete();
 		    $proceso = "ELIMINAR MAESTROS";
 			$mensaje = "El maestro ha sido borrado Correctamente";
-			return view ('sistema.mensaje')
+			return view ('sistema_vistas.mensaje')
 			->with('proceso',$proceso)
 			->with('mensaje',$mensaje);
 	}
@@ -144,4 +160,21 @@ class proveedor extends Controller
            
             return redirect('/reporteproveedores');
 	}
+	
+	public function restauraproveedor($Id_prov)
+	{
+		proveedores::withTrashed()->where('Id_prov',$Id_prov)->restore();
+		
+		$proceso = "RESTAURACION";	
+	    $mensaje="Registro restaurado correctamente";
+		return view('sistema_vistas.mensaje')
+		->with('proceso',$proceso)
+		->with('mensaje',$mensaje);		
+	}
+	public function destroy_prov($Id_prov)
+{
+	proveedores::withTrashed()->where('Id_prov',$Id_prov)->forceDelete();
+	 return redirect('/reporteproveedores');
+
+}
 }
