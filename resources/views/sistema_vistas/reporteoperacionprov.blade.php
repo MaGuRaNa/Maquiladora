@@ -43,12 +43,12 @@ Consultas
 									<td>{{$pro->empre}}</td>
 
 									<td>
-										<a href="{{URL::action('proveedor@destroy_prov',['Id_prov'=>$pro->Id_prov])}}">
+										<a href="{{URL::action('proveedor@destroy_prov',['Id_prov'=>$pro->Id_prov])}}" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar permanente">
 											<i class="fas fa-trash"> Eliminar</i>
 										</a>
 
-										<a href="{{URL::action('proveedor@restauraproveedor',['Id_prov'=>$pro->Id_prov])}}">
-											<i class="fas fa-edit"> Restaurar</i>
+										<a href="{{URL::action('proveedor@restauraproveedor',['Id_prov'=>$pro->Id_prov])}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Restaurar registro">
+											<i class="fas fa-undo"> Restaurar</i>
 										</a>
 
 									</td>

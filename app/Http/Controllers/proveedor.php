@@ -9,7 +9,7 @@ use App\Http\Requests;
 use App\maestros;*/ // Ejemplos//
 use App\proveedores;
 use App\empresas;
-
+use Session;
 class proveedor extends Controller
 {
     public function altaproveedor()
@@ -108,8 +108,8 @@ class proveedor extends Controller
 	public function eliminaproveedor($Id_prov)
 	{
 		    proveedores::find($Id_prov)->delete();
-		    $proceso = "ELIMINAR MAESTROS";
-			$mensaje = "El maestro ha sido borrado Correctamente";
+		    $proceso = "ELIMINACIÓN";
+			$mensaje = "Registro eliminado correctamente";
 			return view ('sistema_vistas.mensaje')
 			->with('proceso',$proceso)
 			->with('mensaje',$mensaje);
@@ -157,7 +157,7 @@ class proveedor extends Controller
 			$prov->Id_empresa=$request->idempr;
 			$prov->save();
 
-           
+            Session::flash('flash_message', 'REGISTRO EXITOSO');
             return redirect('/reporteproveedores');
 	}
 	

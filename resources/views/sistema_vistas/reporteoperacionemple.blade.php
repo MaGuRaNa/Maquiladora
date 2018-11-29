@@ -58,7 +58,7 @@ Consultas
 											</a>
 
 											<a href="{{URL::action('empleado@restauraempleado',['Id_emp'=>$em->Id_emp])}}">
-												<i class="fas fa-edit"> Restaurar</i>
+												<i class="fas fa-undo"> Restaurar</i>
 											</a>
 
 										</center>

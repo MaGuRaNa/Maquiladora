@@ -14,7 +14,7 @@ Consultas
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Tabla de registros</h4>
-                     <a href="{{URL::to('/operacionmateria')}}">Historial de eliminaciones</a>
+                     <a href="{{URL::to('/operacionmateria')}}"  style="color:hsla(0,100%,50%,0.5);">Historial de eliminaciones</a>
                     <!--                    <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>-->
                     <div class="table-responsive m-t-40">
                         <table id="example233" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
@@ -42,11 +42,11 @@ Consultas
                                     <!--<td>{{$mat->Activo_mat}}</td>-->
                                     <td>
                                         <a href="{{URL::action('matprima@modificamateria',['Id_mat'=>$mat->Id_mat])}}">
-                                           <i class="fas fa-edit"></i>
+                                           <i class="fas fa-edit"> Editar</i>
                                         </a>
                                     
                                         <a href="{{URL::action('matprima@eliminamateria',['Id_mat'=>$mat->Id_mat])}}">
-                                             <i class="fas fa-trash"></i>
+                                             <i class="fas fa-trash"> Borrar</i>
                                         </a>
                                     </td>
                                 </tr>

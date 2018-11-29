@@ -46,7 +46,7 @@ Consultas
 										</a>
 
 										<a href="{{URL::action('matprima@restauramateria',['Id_mat'=>$mat->Id_mat])}}">
-											<i class="fas fa-edit"> Restaurar</i>
+											<i class="fas fa-undo"> Restaurar</i>
 										</a>
 
 									</td>

@@ -14,7 +14,7 @@ Consultas
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Tabla de registros</h4>
-                    <a href="{{URL::to('/operacionempleado')}}">Historial de eliminaciones</a>
+                    <a href="{{URL::to('/operacionempleado')}}" style="color:hsla(0,100%,50%,0.5);">Historial de eliminaciones</a>
                     <div class="table-responsive m-t-40">
                        
                         <table id="example233" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">

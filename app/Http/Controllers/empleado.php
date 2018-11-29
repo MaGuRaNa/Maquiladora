@@ -113,7 +113,7 @@ class empleado extends Controller
 		    $emple=empleados::find($Id_emp);
 			$emple->delete();
 		
-			$proceso ="ELIMINACION REALIZADA";
+			$proceso ="ELIMINACIÓN";
             $mensaje ="Registro eliminado correctamente";
             return view('sistema_vistas.mensaje')
             ->with('proceso',$proceso)
@@ -151,7 +151,7 @@ class empleado extends Controller
          'rfcempl'=>'required|regex:/^[A-Z]{4}[0-9]{6}[0-9,A-Z]{3}$/',
 //		 'rfcempl'=>['regex:/^[A-Z]{4}([0-9]{2})(1[0-2]|0[1-9])([0-3][0-9])([ -]?)([A-Z0-9]{4})$/'],
 		 'telempl'=>'required|numeric|regex:/^[0-9]{10}+$/',
-		 'Calle'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
+		 'Calle'=>'required|regex:/^[A-Z,a-z, ,ñ,é,í,á,ó,ú,0-9]*$/',
              'Col'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
              'loc'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,í,á,ó,ú]*$/',
             'nui'=>'required|integer', 
@@ -185,7 +185,7 @@ class empleado extends Controller
 	{
 		empleados::withTrashed()->where('Id_emp',$Id_emp)->restore();
 		
-		$proceso = "RESTAURACION DE MAESTRO";	
+		$proceso = "RESTAURACIÓN";	
 	    $mensaje="Registro restaurado correctamente";
 		return view('sistema_vistas.mensaje')
 		->with('proceso',$proceso)

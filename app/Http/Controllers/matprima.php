@@ -105,7 +105,7 @@ class matprima extends Controller
 	{
 		    materia_primas::find($Id_mat)->delete();
 		    $proceso = "ELIMINAR ";
-			$mensaje = "El maestro ha sido borrado Correctamente";
+			$mensaje = "Registro eliminado correctamente";
 			return view ('sistema_vistas.mensaje')
 			->with('proceso',$proceso)
 			->with('mensaje',$mensaje);
